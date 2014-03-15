@@ -25,7 +25,7 @@ Launch the site at localhost with:
 ```
 npm start
 ```
-Visit [http://localhost:1704/json] to see the main page and [http://localhost:1704/json] to get the example json.
+Visit (http://localhost:1704/json) to see the main page and (http://localhost:1704/json) to get the example json.
 
 ### Installation guides
 
