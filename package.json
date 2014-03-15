@@ -1,0 +1,27 @@
+{
+  "name": "power-hack",
+  "version": "0.0.0",
+  "description": "A repository for PowerHack code.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ElinorCrew/power-hack.git"
+  },
+  "keywords": [
+    "hackathon",
+    "powerhack"
+  ],
+  "author": "teodoran, spohner, hgranlund, georgekw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElinorCrew/power-hack/issues"
+  },
+  "homepage": "https://github.com/ElinorCrew/power-hack",
+  "dependencies": {
+    "express": "~3.4.8",
+    "logfmt": "~0.23.0"
+  }
+}
