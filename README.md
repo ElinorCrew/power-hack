@@ -7,6 +7,10 @@ Currently this project contains express.js, underscore.js and logfmt. On the cli
 
 The initial demo page is [d3-knockout-demo](https://github.com/teodoran/d3-knockout-demo), and shows how d3.js and knockout can be used together to create interesting and reusable graphs.
 
+Some links from Demo Steinkjer:
+* [API documentation](https://api.demosteinkjer.no/docs/)
+* [API Quick Start Guide](https://www.demosteinkjer.no/content/122/API-Quick-Start-Guide)
+
 
 Setup guide
 -----------
