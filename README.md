@@ -76,10 +76,10 @@ Heroku setup
 
 First install the [Heroku toolbelt](https://devcenter.heroku.com/articles/quickstart#step-2-install-the-heroku-toolbelt).
 
-Then you have to link the git repository to the Heroku deployment server using:
+Then you have to navigate to the project folder and link the git repository to the Heroku deployment server using:
 
 ```
-git remote add heroku git@heroku.com:kodekollektivet.git
+git remote add heroku git@heroku.com:power-hack.git
 ```
 
 Now you can deploy the site to heroku with:
