@@ -10,6 +10,10 @@ var MeterUtil = function () {
     self.returnHello = function () {
         return 'hello';
     };
+
+    self.wattHours = function (meterReading) {
+        return 29961698;
+    };
 };
 
 exports.MeterUtil = MeterUtil;

@@ -38,4 +38,14 @@ describe('meter-util', function() {
             assert.equal('hello', meterUtil.returnHello());
         });
     });
+
+    describe('calculateWattHours', function() {
+        it('should return hello', function() {
+            var meterUtil = new MeterUtil(),
+                meterReading = jsonReadings.meterReadings[0].meterReading.readings[0],
+                actualWattHours = meterUtil.wattHours(meterReading);
+
+            assert.equal(29961698, actualWattHours);
+        });
+    });
 });
