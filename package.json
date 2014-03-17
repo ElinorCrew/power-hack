@@ -4,7 +4,7 @@
   "description": "A repository for PowerHack code.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec $(find spec/ -iname '*.js')"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
     "express": "~3.4.8",
     "logfmt": "~0.23.0",
     "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.0"
   }
 }
