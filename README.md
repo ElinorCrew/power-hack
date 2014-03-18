@@ -91,4 +91,6 @@ git push heroku master
 Testing
 -------
 
-Since time is in short supply, we'll probably roll without much tests. When needed [mocha](http://visionmedia.github.io/mocha/) specs are written and places in the /spec folder. Run all tests with ```npm test```.
+Since time is in short supply, we'll probably roll without much tests. When needed [mocha](http://visionmedia.github.io/mocha/) specs are written and places in the /spec folder. To install mocha and the [should.js](https://github.com/visionmedia/should.js) assertion library, install the development dependencies with npm. Run all tests with ```npm test```.
+
+For the sake of simplicity, mocha is currently only set up to run server side tests.

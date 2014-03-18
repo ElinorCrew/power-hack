@@ -1,14 +1,37 @@
 /*jslint node: true*/
 /*global describe, it*/
 
-var assert = require('assert'),
-    MeterUtil = require('../meter-util').MeterUtil,
+var should = require('should'),
+    MeterUtil = require('../meter-util').MeterUtil;
 
-    jsonReadings = {
-        'meterReadings': [{
-            'meterReading': {
-                'meterAsset': { 'mRID': '7350049083690839' },
-                'readings': [
+describe('meter-util', function() {
+    'use strict';
+    describe('readingType', function() {
+        it('should parse a reading-type reference into json', function() {
+            var meterUtil = new MeterUtil(),
+                readingType = { 'ref': '7.12.3.1.0.12.0.0.0.3.72' },
+                expectedReadingTypeJson = {
+                    'TimeAttribute': 7,
+                    'DataQualifier': 12,
+                    'AccumlationBehaviour': 3,
+                    'FlowDirection': 1,
+                    'UomCategorySubclass': 0,
+                    'UomCategoryIndex': 12,
+                    'MeasurementCategory': 0,
+                    'Enumeration': 0,
+                    'Phase': 0,
+                    'metricMultiplier': 3,
+                    'UnitOfMeasure': 72
+                };
+
+            meterUtil.readingType(readingType).should.eql(expectedReadingTypeJson);
+        });
+    });
+
+    describe('wattHours', function() {
+        it('given a meter reading should return correct no of Wh', function() {
+            var meterUtil = new MeterUtil(),
+                meterReadings = [
                     {
                         'timeStamp': '2013-06-04T22:00:00.000Z',
                         'value': 29961.598,
@@ -23,29 +46,10 @@ var assert = require('assert'),
                             'ref': '7.12.3.1.0.12.0.0.0.3.72'
                         }
                     }
-                ],
-                'serviceDeliveryPoint': { 'mRID': '1033963.001.1' }
-            }
-        }]
-    };
+                ];
 
-describe('meter-util', function() {
-    'use strict';
-    describe('returnHello', function() {
-        it('should return hello', function() {
-            var meterUtil = new MeterUtil();
-
-            assert.equal('hello', meterUtil.returnHello());
-        });
-    });
-
-    describe('calculateWattHours', function() {
-        it('should return hello', function() {
-            var meterUtil = new MeterUtil(),
-                meterReading = jsonReadings.meterReadings[0].meterReading.readings[0],
-                actualWattHours = meterUtil.wattHours(meterReading);
-
-            assert.equal(29961698, actualWattHours);
+            meterUtil.wattHours(meterReadings[0]).should.equal(29961598);
+            meterUtil.wattHours(meterReadings[1]).should.equal(29961750);
         });
     });
 });
