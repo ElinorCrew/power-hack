@@ -3,7 +3,7 @@ ElinorCrew@PowerHack2014
 
 Code for #PowerHack2014. Visit the live demo at [power-hack.herokuapp.com](http://power-hack.herokuapp.com/).
 
-Currently this project contains [express.js](http://expressjs.com/3x/api.html), [underscore.js](http://underscorejs.org/) and [logfmt](https://github.com/csquared/node-logfmt). On the client-side, [knockout.js](http://knockoutjs.com/documentation/introduction.html) and [d3.js](https://github.com/mbostock/d3/wikigit) is pulled directly from CDN. Bootstrap css is added to /public/style.
+Currently this project contains [express.js](http://expressjs.com/3x/api.html), [underscore.js](http://underscorejs.org/) and [logfmt](https://github.com/csquared/node-logfmt). On the client-side, [knockout.js](http://knockoutjs.com/documentation/introduction.html), [underscore.js](http://underscorejs.org/) and [d3.js](https://github.com/mbostock/d3/wikigit) is pulled directly from CDN. Bootstrap css is added to /public/style.
 
 The initial demo page is [d3-knockout-demo](https://github.com/teodoran/d3-knockout-demo), and shows how d3.js and knockout can be used together to create interesting and reusable graphs.
 
