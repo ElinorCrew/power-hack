@@ -1,4 +1,5 @@
-/*global ko, setInterval, console*/
+/*jslint nomen: true */
+/*global ko, setInterval, console, _*/
 
 var PH = this.PH || {};
 
@@ -35,9 +36,13 @@ var PH = this.PH || {};
             return value;
         };
 
-        self.jsonData = data;
+        self.jsonData = ko.observable(_.map(data.meterReadings[0].meterReading.readings, function (meterReading) {
+            return {
+                date: Date.parse(meterReading.timeStamp),
+                val: self.wattHours(meterReading) / 1000
+            };
+        }));
 
-        console.log(self.jsonData);
 
         self.myCurrentPowerData = ko.observable(37);
 
