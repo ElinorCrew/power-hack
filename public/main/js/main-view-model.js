@@ -39,15 +39,15 @@ var PH = this.PH || {};
 
         console.log(self.jsonData);
 
-        self.myCurrentAverageData = ko.observable(37);
+        self.myCurrentAverageData = ko.observable(1);
 
         setInterval(function () {
-            self.myCurrentAverageData(Math.random() * 100);
+            self.myCurrentAverageData(Math.random() * 2);
         }, 3333);
-        self.myCurrentPowerData = ko.observable(37);
+        self.myCurrentPowerData = ko.observable(1);
 
         setInterval(function () {
-            self.myCurrentPowerData(Math.random() * 100);
+            self.myCurrentPowerData(Math.random() * 2);
         }, 3333);
     };
 }(PH));
