@@ -82,21 +82,19 @@ ko.bindingHandlers.lineChart = {
                 .y0(height)
                 .y1(function(d) { return y(d.val); }),
 
-            baseline = d3.min(data, function(d) { return d.val; }),
-
-            previousAwerage = 32800,
-            classAwerage = 32835,
+            previousAwerage = 2,
+            classAwerage = 3,
 
             flatArea = d3.svg.area()
                 .x(function(d) { return x(d.date); })
                 .y0(height)
-                .y1(function() { return y(baseline); }),
+                .y1(function() { return y(0); }),
 
             svg = d3.select(element).select("svg g");
 
 
         x.domain(d3.extent(data, function(d) { return d.date; }));
-        y.domain(d3.extent(data, function(d) { return d.val; }));
+        y.domain([0, d3.max(data, function(d) { return d.val; })]);
 
         svg.select("g.x.axis")
             .transition()

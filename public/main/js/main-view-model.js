@@ -6,7 +6,7 @@ var PH = this.PH || {};
 (function (namespace) {
     "use strict";
     namespace.mainViewModel = function(data) {
-        var self = this;
+        var self = this, i;
 
         self.readingType = function (readingType) {
             var values = readingType.ref.split('.'),
@@ -36,13 +36,21 @@ var PH = this.PH || {};
             return value;
         };
 
-        self.jsonData = ko.observable(_.map(data.meterReadings[0].meterReading.readings, function (meterReading) {
+        self.meterReadings = _.map(data.meterReadings[0].meterReading.readings, function (meterReading) {
             return {
                 date: Date.parse(meterReading.timeStamp),
                 val: self.wattHours(meterReading) / 1000
             };
-        }));
+        });
 
+        self.jsonData = ko.observableArray();
+
+        for (i = 1; i < self.meterReadings.length; i += 1) {
+            self.jsonData.push({
+                date: self.meterReadings[i].date,
+                val: self.meterReadings[i].val - self.meterReadings[i - 1].val
+            });
+        }
 
         self.myCurrentAverageData = ko.observable(1);
 
