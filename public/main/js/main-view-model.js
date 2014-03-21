@@ -39,6 +39,11 @@ var PH = this.PH || {};
 
         console.log(self.jsonData);
 
+        self.myCurrentAverageData = ko.observable(37);
+
+        setInterval(function () {
+            self.myCurrentAverageData(Math.random() * 100);
+        }, 3333);
         self.myCurrentPowerData = ko.observable(37);
 
         setInterval(function () {
