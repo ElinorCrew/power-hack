@@ -30,7 +30,6 @@ ko.bindingHandlers.barChart = {
         .style("stroke", gray.darker())
         .style("fill", gray)
         .attr("width", width)
-        .attr("rx", 10)
         .attr("ry", 10)
         .attr("height", height)
         .attr("class", "barBox");
@@ -38,6 +37,7 @@ ko.bindingHandlers.barChart = {
 
         svg.append("rect")
         .attr("class" , "barRect")
+        .attr("ry", 10)
         .attr("width", 0)
         .attr("height", height);
 
@@ -68,22 +68,15 @@ ko.bindingHandlers.barChart = {
         d= Math.round(Math.abs(1-data)*10)/10,
 
         w  = function (value) {
-            return parseInt((Math.abs(1-value)) * width, 10);
+            return parseInt(d * width, 10);
         },
 
-        x  = function (value) {
-            if (value <= 1) {
-                return width/2-w(value);
-            };
-            return width/2;
-        },
         c  = function (value) {
             if (value <= 1) {
                 return red;
             };
             return green;
         };
-
 
         d3.select(element).select("rect.barRect")
         .transition()
@@ -95,16 +88,13 @@ ko.bindingHandlers.barChart = {
         .transition()
         .duration(750)
         .style('fill', c(data).brighter())
-        // .style('stroke', c(data).brighter(2))
-
 
         d3.select(element).select("text.barValue")
-
+        .transition()
+        .duration(750)
         .attr("fill", c(data).darker())
         .attr("x", width * 0.75)
         .attr("y", height/2.5)
-        .transition()
-        .duration(1000)
         .tween("text", function() {
             var i = d3.interpolate(this.textContent, d),
             prec = (d + "").split("."),
@@ -119,6 +109,5 @@ ko.bindingHandlers.barChart = {
         .attr("fill", c(data).darker())
         .attr("x", width*0.4)
         .attr("y", height*6/7);
-
     }
 };
