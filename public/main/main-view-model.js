@@ -1,4 +1,4 @@
-/*global ko, setInterval, console*/
+/*global ko, setInterval, $, console*/
 
 var PH = this.PH || {};
 
@@ -38,11 +38,5 @@ var PH = this.PH || {};
         self.jsonData = data;
 
         console.log(self.jsonData);
-
-        self.myCurrentPowerData = ko.observable(37);
-
-        setInterval(function () {
-            self.myCurrentPowerData(Math.random() * 100);
-        }, 3333);
     };
 }(PH));
