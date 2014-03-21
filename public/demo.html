@@ -35,7 +35,7 @@
         </p>
 
         <h3>Red vs. Blue</h3>
-        
+
         <div class="row">
             <div class="col-md-12 miniChart" data-bind="electionChart: electionData"></div>
         </div>
@@ -103,5 +103,30 @@
     <script type='text/javascript' src='custom-binding-handlers/election-binding.js'></script>
     <script type='text/javascript' src='custom-binding-handlers/line-chart-binding.js'></script>
     <script type='text/javascript' src='app.js'></script>
+
+
+     <!-- TODO: remove this before prodution  -->
+    <script>
+        var ws;
+        function socket() {
+            ws = new WebSocket("ws://127.0.0.1:8080");
+            ws.onmessage = function ( e ) {
+                var data = JSON.parse(e.data);
+                if ( data.r ) {
+                    location.reload();
+                }
+            };
+        }
+        setInterval(function () {
+            if ( ws ) {
+                if ( ws.readyState !== 1 ) {
+                    socket();
+                }
+            } else {
+                socket();
+            }
+        }, 1000);
+    </script>
+</body>
 </body>
 </html>
