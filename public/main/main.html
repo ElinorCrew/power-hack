@@ -185,7 +185,7 @@
 </div>
 </div>
   <div class="col-lg-3">
-    <div class="miniChart" data-bind="barChart: myCurrentAverageData"></div>
+  <div class="miniChart" data-bind="barChart: [myCurrentAverageData, 'Nice Title!']"></div>
   </div>
 </div><!-- /.row -->
 
@@ -194,12 +194,6 @@
         <div class="col-md-12 bigChart" data-bind='lineChart: jsonData'></div>
     </div>
 </div><!-- /.row -->
-
-<div class="row">
-    <div class="col-lg-12">
-      <div class="col-md-12 miniChart" data-bind="barChart: myCurrentAverageData"></div>
-  </div>
-</div>
 
 </div><!-- /#page-wrapper -->
 
