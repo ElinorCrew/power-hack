@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="../style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/bar-chart-demo.css">
-    <link rel="stylesheet" href="../style/gh-fork-ribbon.css">
 </head>
 
 <body>
@@ -38,15 +37,13 @@
 
 
             <div class="row">
-                <div class="col col-md-12">
-                    <h1>graph1</h1>
-                </div>
+                <h1>graph1</h1>
+                <div class="col-md-12 bigChart" data-bind='lineChart: jsonData'></div>
             </div>
 
             <div class="row">
-                <div class="col col-md-12">
-                    <h1>graph2</h1>
-                </div>
+                <h1>graph2</h1>
+                <div class="col-md-12 bigChart" data-bind='lineChart: jsonData'></div>
             </div>
         </div>
 
@@ -54,17 +51,18 @@
             <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
             <p>
                 ElinorCrew@PowerHack2014 &middot;
-                <a href="http://folk.ntnu.no/steffenp/">Steffen Pöhner</a> &middot;
+                <a href="https://twitter.com/spohner">Steffen Pöhner</a> &middot;
                 <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
-                <a href="https://github.com/georgekw">George Lee</a> &middot;
+                <a href="https://twitter.com/georgekw89">George Lee</a> &middot;
                 <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
-                <a href="http://folk.ntnu.no/teodoran/">Teodor Elstad</a>
+                <a href="https://twitter.com/_teodoran">Teodor Elstad</a>
             </p>
         </footer>
     </div>
 
     <script type='text/javascript' src='js/main-view-model.js'></script>
     <script type='text/javascript' src='js/bar-binding.js'></script>
+    <script type='text/javascript' src='js/line-chart-binding.js'></script>
     <script type='text/javascript' src='js/app.js'></script>
 
     <!-- TODO: remove this before prodution  -->
