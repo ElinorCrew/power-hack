@@ -10,7 +10,7 @@
     <script type='text/javascript' src="http://code.jquery.com/jquery-1.11.0.min.js" charset="utf-8"></script>
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" charset="utf-8"></script>
 
-    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../style/bar-chart-demo.css">
 </head>
 
@@ -37,14 +37,10 @@
 
 
             <div class="row">
-                <h1>graph1</h1>
+                <h1>Mitt strømforbruk</h1>
                 <div class="col-md-12 bigChart" data-bind='lineChart: jsonData'></div>
             </div>
 
-            <div class="row">
-                <h1>graph2</h1>
-                <div class="col-md-12 bigChart" data-bind='lineChart: jsonData'></div>
-            </div>
         </div>
 
         <footer>
@@ -63,6 +59,7 @@
     <script type='text/javascript' src='js/main-view-model.js'></script>
     <script type='text/javascript' src='js/bar-binding.js'></script>
     <script type='text/javascript' src='js/line-chart-binding.js'></script>
+    <script type='text/javascript' src='js/bar-chart-binding.js'></script>
     <script type='text/javascript' src='js/app.js'></script>
 
     <!-- TODO: remove this before prodution  -->

@@ -27,11 +27,28 @@ ko.bindingHandlers.lineChart = {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Power usage (kWh)");
+            .text("Strømforbruk (kWh)");
 
         svg.append("path")
-            .attr("class", "line data");
+            .attr("class", "area data");
 
+        svg.append("line")
+            .attr("class", "awgOldData")
+            .attr("x1", 0)
+            .attr("y1", height)
+            .attr("x2", width)
+            .attr("y2", height)
+            .attr("style", "stroke: #ff7f0e; stroke-width:2")
+            .attr("stroke-dasharray", "20,10,5,5,5,10");
+
+        svg.append("line")
+            .attr("class", "awgClassData")
+            .attr("x1", 0)
+            .attr("y1", height)
+            .attr("x2", width)
+            .attr("y2", height)
+            .attr("style", "stroke: #2ca02c; stroke-width:2")
+            .attr("stroke-dasharray", "20,10,5,5,5,10");
     },
     update: function(element, valueAccessor) {
         "use strict";
@@ -43,6 +60,8 @@ ko.bindingHandlers.lineChart = {
             height = elementHeight - margin.top - margin.bottom,
 
             animationDuration = 750,
+
+            data = ko.unwrap(valueAccessor()),
 
             x = d3.time.scale()
                 .range([0, width]),
@@ -58,16 +77,26 @@ ko.bindingHandlers.lineChart = {
                 .scale(y)
                 .orient("left"),
 
-            line = d3.svg.line()
+            area = d3.svg.area()
                 .x(function(d) { return x(d.date); })
-                .y(function(d) { return y(d.val); }),
+                .y0(height)
+                .y1(function(d) { return y(d.val); }),
 
-            svg = d3.select(element).select("svg g"),
+            baseline = d3.min(data, function(d) { return d.val; }),
 
-            data = ko.unwrap(valueAccessor());
+            previousAwerage = 32800,
+            classAwerage = 32835,
+
+            flatArea = d3.svg.area()
+                .x(function(d) { return x(d.date); })
+                .y0(height)
+                .y1(function() { return y(baseline); }),
+
+            svg = d3.select(element).select("svg g");
+
 
         x.domain(d3.extent(data, function(d) { return d.date; }));
-        y.domain([0, d3.max(data, function(d) { return d.val; })]);
+        y.domain(d3.extent(data, function(d) { return d.val; }));
 
         svg.select("g.x.axis")
             .transition()
@@ -79,10 +108,26 @@ ko.bindingHandlers.lineChart = {
             .duration(animationDuration)
             .call(yAxis);
 
-        svg.select("path.line.data")
+        svg.select("path.area.data")
+            .datum(data)
+            .attr("d", flatArea);
+
+        svg.select("path.area.data")
             .datum(data)
             .transition()
             .duration(animationDuration)
-            .attr("d", line);
+            .attr("d", area);
+
+        svg.select("line.awgOldData")
+            .transition()
+            .duration(animationDuration)
+            .attr("y1", y(previousAwerage))
+            .attr("y2", y(previousAwerage));
+
+        svg.select("line.awgClassData")
+            .transition()
+            .duration(animationDuration)
+            .attr("y1", y(classAwerage))
+            .attr("y2", y(classAwerage));
     }
 };
