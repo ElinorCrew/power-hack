@@ -1,0 +1,19 @@
+.miniChart {
+    height: 40px;
+}
+
+.vspace {
+    height: 15px;
+}
+
+.background {
+    background-color: #ffffff;
+}
+
+.score {
+    fill: steelblue;
+}
+
+.score-text {
+    fill: #ffffff;
+}
