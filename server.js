@@ -37,7 +37,7 @@ app.get('/main', function (req, res) {
 });
 
 app.get('/highscore', function (req, res) {
-    res.sendfile(__dirname + '/public/highscore.html');
+    res.sendfile(__dirname + '/public/highscore/highscore.html');
 });
 
 app.get('/achievements', function (req, res) {
