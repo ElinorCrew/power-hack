@@ -56,6 +56,10 @@ app.get('/json', function (req, res) {
     res.json(provider.meterReadings());
 });
 
+app.get('/json/february', function (req, res) {
+    res.json(provider.februaryData());
+});
+
 // Start server on given port
 app.listen(port);
 console.log('po\\/\\/er|-|ack started at http://localhost:' + port + '/');
