@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Splash</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <script type='text/javascript' src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
+  <title>Kraftkamp.no - by ElinorCrew</title>
 
-    <link rel="stylesheet" href="style/bootstrap.min.css">
-    <link rel="stylesheet" href="style/bar-chart-demo.css">
-    <link rel="stylesheet" href="style/gh-fork-ribbon.css">
-</head>
+  <!-- Bootstrap -->
+  <link href="style/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/flipclock.css">
 
-<body>
-    <div class="container">
-        <h1>SplashPage</h1>
+  <link href="style/splash.css" rel="stylesheet">
 
-        <footer>
-            <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
-            <p>
-                ElinorCrew@PowerHack2014 &middot;
-                <a href="http://folk.ntnu.no/steffenp/">Steffen Pöhner</a> &middot;
-                <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
-                <a href="https://github.com/georgekw">George Lee</a> &middot;
-                <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
-                <a href="http://folk.ntnu.no/teodoran/">Teodor Elstad</a>
-            </p>
-        </footer>
-    </div>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+
+     <div id="header">
+      <div class="container-fluid">
+       <div class="row">
+       <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-11 col-sm-offset-1">
+         <h1>Kraftkamp.no</h1>
+         <h2>Oppfordring til strømsparetiltak gjennom spill og morro. </h2>
+         <h2 class="subtitle"> Levert av team ElinorCrew.</h2>
+         <div class="clock"></div>              
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <p class="copyright">"Power Lines" by Mark - Attribution-NonCommercial-NoDerivs License</p>
+
+ <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script src="assets/bootstrap.min.js"></script>
+ <script src="assets/flipclock.min.js"></script>
+ <script type="text/javascript">
+
+  var currentTime = new Date();
+  var endTime = new Date(2014,2,22,13);
+
+  var countdownTime = (endTime - currentTime) / 1000;
+  var clock = $('.clock').FlipClock(countdownTime, {
+    countdown: true
+  });
+</script>
 </body>
 </html>

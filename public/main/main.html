@@ -19,71 +19,74 @@
         <h1>MainInfoPage</h1>
 
         <div class="row">
-         <div class="col-md-2">
-            <h1>bilde</h1>
-        </div>
-        <div class="col-md-6 col-sm-offset-4">
-         <div class="row">
-             <div class="col-md-12">
-                <h1>bar1</h1>
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="../style/images/profile.jpg" alt="...">
+                </div>
             </div>
-            <div class="col-md-12">
-                <h1>bar1</h1>
+            <div class="col-md-6 col-sm-offset-4">
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="col-md-12 miniChart" data-bind="barChart: myCurrentPowerData"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <h1>bar1</h1>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col col-md-12">
+                    <h1>graph1</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-12">
+                    <h1>graph2</h1>
+                </div>
             </div>
         </div>
+
+        <footer>
+            <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
+            <p>
+                ElinorCrew@PowerHack2014 &middot;
+                <a href="http://folk.ntnu.no/steffenp/">Steffen Pöhner</a> &middot;
+                <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
+                <a href="https://github.com/georgekw">George Lee</a> &middot;
+                <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
+                <a href="http://folk.ntnu.no/teodoran/">Teodor Elstad</a>
+            </p>
+        </footer>
     </div>
 
+    <script type='text/javascript' src='js/main-view-model.js'></script>
+    <script type='text/javascript' src='js/bar-binding.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
 
-    <div class="row">
-        <div class="col col-md-12">
-            <h1>graph1</h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col col-md-12">
-            <h1>graph2</h1>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
-    <p>
-        ElinorCrew@PowerHack2014 &middot;
-        <a href="http://folk.ntnu.no/steffenp/">Steffen Pöhner</a> &middot;
-        <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
-        <a href="https://github.com/georgekw">George Lee</a> &middot;
-        <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
-        <a href="http://folk.ntnu.no/teodoran/">Teodor Elstad</a>
-    </p>
-</footer>
-</div>
-
-<script type='text/javascript' src='main-view-model.js'></script>
-<script type='text/javascript' src='app.js'></script>
-
-<!-- TODO: remove this before prodution  -->
-<script>
-    var ws;
-    function socket() {
-        ws = new WebSocket("ws://127.0.0.1:8080");
-        ws.onmessage = function ( e ) {
-            var data = JSON.parse(e.data);
-            if ( data.r ) {
-                location.reload();
-            }
-        };
-    }
-    setInterval(function () {
-        if ( ws ) {
-            if ( ws.readyState !== 1 ) {
+    <!-- TODO: remove this before prodution  -->
+    <script>
+        var ws;
+        function socket() {
+            ws = new WebSocket("ws://127.0.0.1:8080");
+            ws.onmessage = function ( e ) {
+                var data = JSON.parse(e.data);
+                if ( data.r ) {
+                    location.reload();
+                }
+            };
+        }
+        setInterval(function () {
+            if ( ws ) {
+                if ( ws.readyState !== 1 ) {
+                    socket();
+                }
+            } else {
                 socket();
             }
-        } else {
-            socket();
-        }
-    }, 1000);
-</script>
+        }, 1000);
+    </script>
 </body>
 </html>
