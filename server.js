@@ -41,7 +41,7 @@ app.get('/highscore', function (req, res) {
 });
 
 app.get('/achievements', function (req, res) {
-    res.sendfile(__dirname + '/public/achievements.html');
+    res.sendfile(__dirname + '/public/achievements/achievements.html');
 });
 
 app.get('/demo', function (req, res) {
