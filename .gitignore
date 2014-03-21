@@ -5,3 +5,14 @@
 # Logs and databases #
 ######################
 *.log
+
+
+
+# Sublime files
+*.sublime-project
+*.sublime-workspace
+
+
+
+# Mac
+*.DS-store
