@@ -37,7 +37,7 @@ app.get('/main', function (req, res) {
 });
 
 app.get('/highscore', function (req, res) {
-    res.sendfile(__dirname + '/public/highscore.html');
+    res.sendfile(__dirname + '/public/highscore/highscore.html');
 });
 
 app.get('/achievements', function (req, res) {
@@ -58,6 +58,10 @@ app.get('/json', function (req, res) {
 
 app.get('/json/february', function (req, res) {
     res.json(provider.februaryData());
+});
+
+app.get('/json/highscore', function (req, res) {
+    res.json(provider.highscore());
 });
 
 // Start server on given port

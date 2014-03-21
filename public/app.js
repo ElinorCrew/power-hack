@@ -1,10 +1,10 @@
 /*global ko*/
 
-var D3KD = this.D3KD || {};
+var PH = this.PH || {};
 
 (function () {
     "use strict";
-    var dataViewModel = new D3KD.dataViewModel();
+    var dataViewModel = new PH.dataViewModel();
 
     ko.applyBindings(dataViewModel);
 }());
