@@ -44,10 +44,15 @@ var PH = this.PH || {};
         }));
 
 
-        self.myCurrentPowerData = ko.observable(37);
+        self.myCurrentAverageData = ko.observable(1);
 
         setInterval(function () {
-            self.myCurrentPowerData(Math.random() * 100);
+            self.myCurrentAverageData(Math.random() * 2);
+        }, 3333);
+        self.myCurrentPowerData = ko.observable(1);
+
+        setInterval(function () {
+            self.myCurrentPowerData(Math.random() * 2);
         }, 3333);
     };
 }(PH));
