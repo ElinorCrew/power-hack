@@ -45,7 +45,7 @@ app.get('/achievements', function (req, res) {
 });
 
 app.get('/demo', function (req, res) {
-    res.sendfile(__dirname + '/public/index.html');
+    res.sendfile(__dirname + '/public/demo.html');
 });
 
 
