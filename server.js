@@ -29,8 +29,25 @@ app.configure(function() {
 
 // Serves initial html page
 app.get('/', function (req, res) {
+    res.sendfile(__dirname + '/public/splash.html');
+});
+
+app.get('/main', function (req, res) {
+    res.sendfile(__dirname + '/public/main.html');
+});
+
+app.get('/highscore', function (req, res) {
+    res.sendfile(__dirname + '/public/highscore.html');
+});
+
+app.get('/achievements', function (req, res) {
+    res.sendfile(__dirname + '/public/achievements.html');
+});
+
+app.get('/demo', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
+
 
 // Serves test JSON of meter readings
 app.get('/json', function (req, res) {
