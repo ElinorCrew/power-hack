@@ -8,8 +8,6 @@ var PH = this.PH || {};
     namespace.highscoreViewModel = function(data) {
         var self = this;
 
-        self.test = data;
-
-        console.log(self.test);
+        self.friends = ko.observableArray(data.friends);
     };
 }(PH));

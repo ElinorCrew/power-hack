@@ -60,6 +60,10 @@ app.get('/json/february', function (req, res) {
     res.json(provider.februaryData());
 });
 
+app.get('/json/highscore', function (req, res) {
+    res.json(provider.highscore());
+});
+
 // Start server on given port
 app.listen(port);
 console.log('po\\/\\/er|-|ack started at http://localhost:' + port + '/');

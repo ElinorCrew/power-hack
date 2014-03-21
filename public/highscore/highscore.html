@@ -17,6 +17,14 @@
 <body>
     <div class="container">
         <h1>HighscorePage</h1>
+        <hr class="featurette-divider">
+
+        <div data-bind='foreach: friends'>
+                <div data-bind='text: name'></div>
+                <div class="pull-right" data-bind='text: score'></div>
+
+                <hr class="featurette-divider">
+            </div>
     </div>
 
     <script type='text/javascript' src='js/highscore-view-model.js'></script>
