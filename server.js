@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/main', function (req, res) {
-    res.sendfile(__dirname + '/public/main.html');
+    res.sendfile(__dirname + '/public/main/main.html');
 });
 
 app.get('/highscore', function (req, res) {
