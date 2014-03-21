@@ -3,5 +3,7 @@
  */
 
 $(document).ready(function() {
-    $("p[rel]").overlay();
+    $("p[rel]").overlay({
+        closeOnClick: true
+    });
 });
