@@ -8,6 +8,10 @@ var PH = this.PH || {};
     namespace.highscoreViewModel = function(data) {
         var self = this;
 
+        self.best = _.max(data.friends, function (friend) {
+            return friend.score;
+        });
+
         self.friends = ko.observableArray(data.friends);
     };
 }(PH));
