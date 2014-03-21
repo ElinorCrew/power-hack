@@ -41,7 +41,7 @@ app.get('/highscore', function (req, res) {
 });
 
 app.get('/achievements', function (req, res) {
-    res.sendfile(__dirname + '/public/achievements.html');
+    res.sendfile(__dirname + '/public/achievements/achievements.html');
 });
 
 app.get('/demo', function (req, res) {
@@ -54,6 +54,10 @@ app.get('/json', function (req, res) {
     // Example of how to a parse url querystring
     // var q = url.parse(req.url, true).query;
     res.json(provider.meterReadings());
+});
+
+app.get('/json/february', function (req, res) {
+    res.json(provider.februaryData());
 });
 
 // Start server on given port
