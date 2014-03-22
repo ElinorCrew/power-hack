@@ -3,22 +3,13 @@ var red = d3.rgb('#F07C7C');
 var green = d3.rgb('#d6e9c6');
 var gray = d3.rgb("#f5f5f5");
 
-function rightRoundedRect(x, y, width, height, radius) {
-  return "M" + x + "," + y
-  + "h" + (width - radius)
-  + "a" + radius + "," + radius + " 0 0 1 " + radius + "," + radius
-  + "v" + (height - 2 * radius)
-  + "a" + radius + "," + radius + " 0 0 1 " + -radius + "," + radius
-  + "h" + (radius - width)
-  + "z";
-}
-
 ko.bindingHandlers.barChart = {
-    init: function(element) {
+    init: function(element, valueAccessor) {
         "use strict";
 
         var  width = parseInt(d3.select(element).style("width"), 10),
         height = parseInt(d3.select(element).style("height"), 10),
+        title = ko.unwrap(valueAccessor()[1]),
 
         svg = d3.select(element)
         .append("svg")
@@ -51,7 +42,7 @@ ko.bindingHandlers.barChart = {
 
         svg.append("text")
         .attr("class" , "barTitle")
-        .text('Current power')
+        .text(title)
         .style("font-size","35px")
         .attr("fill", gray)
         .attr("text-anchor", "middle")
@@ -64,7 +55,7 @@ ko.bindingHandlers.barChart = {
 
         var width = parseInt(d3.select(element).style("width"), 10),
         height = parseInt(d3.select(element).style("height"), 10),
-        data = ko.unwrap(valueAccessor()),
+        data = ko.unwrap(valueAccessor()[0]),
         d= Math.round(Math.abs(1-data)*10)/10,
 
         w  = function (value) {
@@ -77,6 +68,8 @@ ko.bindingHandlers.barChart = {
             };
             return green;
         };
+
+        console.log(ko.unwrap(valueAccessor()));
 
         d3.select(element).select("rect.barRect")
         .transition()
