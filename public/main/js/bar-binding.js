@@ -43,7 +43,7 @@ ko.bindingHandlers.barChart = {
         svg.append("text")
         .attr("class" , "barTitle")
         .text(title)
-        .style("font-size","35px")
+        .style("font-size","30px")
         .attr("fill", gray)
         .attr("text-anchor", "middle")
         .attr("x", width*0.4)
