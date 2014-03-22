@@ -1,7 +1,6 @@
 
 .miniChart {
-	height: 150px;
-	margin-bottom: 10px;
+	height: 114px;
 }
 
 .bigChart {
@@ -11,7 +10,7 @@
 }
 
 .bar {
-	border: 1px solid;
+	border: 1px solid #ddd;
 }
 
 .barRect {
