@@ -236,7 +236,7 @@ var JsonProvider = function () {
                 {"name": "Steffen", "score": 712, "imageurl": "../style/images/steffen.jpg", "currentuser": false},
                 {"name": "Kirø", "score": 812, "imageurl": "../style/images/kiro.jpg", "currentuser": false},
                 {"name": "Teodor", "score": 732, "imageurl": "../style/images/teo.jpg", "currentuser": false},
-                {"name": "Inga Marte", "score": 132, "imageurl": "../style/images/inga_marte.jpg", "currentuser": true}
+                {"name": "Inga Marte", "score": 1832, "imageurl": "../style/images/inga_marte.jpg", "currentuser": true}
             ]
         };
     };
