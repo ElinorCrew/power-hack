@@ -100,14 +100,9 @@ ko.bindingHandlers.lineChart = {
             .attr("d", flatArea);
 
         svg.select("path.area.data")
-            .datum(data)
-            .transition()
-            .duration(animationDuration)
             .attr("d", area);
 
         svg.select("line.awgOldData")
-            .transition()
-            .duration(animationDuration)
             .attr("y1", y(myAwg))
             .attr("y2", y(myAwg));
     }
