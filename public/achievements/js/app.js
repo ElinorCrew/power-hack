@@ -4,10 +4,11 @@ var PH = this.PH || {};
 
 (function () {
     "use strict";
-    var mainViewModel;
+    var achievementViewModel;
 
-    $.get("/json/february", function (data) {
-        mainViewModel = new PH.mainViewModel(data);
-        ko.applyBindings(mainViewModel);
+    $.get("/json/achievements", function (data) {
+        achievementViewModel = new PH.achievementViewModel(data);
+        ko.applyBindings(achievementViewModel);
     });
+
 }());
