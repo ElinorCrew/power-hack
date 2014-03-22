@@ -54,10 +54,8 @@ app.get('/api', function (req, res) {
 });
 
 // Serves test JSON of meter readings
-app.get('/json', function (req, res) {
-    // Example of how to a parse url querystring
-    // var q = url.parse(req.url, true).query;
-    res.json(provider.meterReadings());
+app.get('/json/mainViewData', function (req, res) {
+    res.json(provider.mainViewData());
 });
 
 app.get('/json/lastWeek', function (req, res) {
@@ -66,6 +64,18 @@ app.get('/json/lastWeek', function (req, res) {
 
 app.get('/json/thisWeek', function (req, res) {
     res.json(provider.thisWeek());
+});
+
+app.get('/json/lastWeekAwg', function (req, res) {
+    res.json(provider.lastWeekAwg());
+});
+
+app.get('/json/thisWeekAwg', function (req, res) {
+    res.json(provider.thisWeekAwg());
+});
+
+app.get('/json/thisGroupAwg', function (req, res) {
+    res.json(provider.thisGroupAwg());
 });
 
 app.get('/json/achievements', function (req, res) {

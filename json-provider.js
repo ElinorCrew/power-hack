@@ -14,6 +14,7 @@ var JsonProvider = function () {
         meter = new MeterUtil(),
         thisWeek = null,
         lastWeek = null,
+        thisAwg = null,
         lastAwg = null,
         groupAwg = null,
 
@@ -39,12 +40,30 @@ var JsonProvider = function () {
 
     apiProvider.getMeterReadings(meterKey, '2014-03-15', '2014-03-22', 'Hour', function (json) {
         thisWeek = convertValues(json);
+
+        var thisWeekSum = _.reduce(thisWeek, function(memo, reading) { return memo + reading.val; }, 0);
+        thisAwg = thisWeekSum / thisWeek.length;
     });
 
     apiProvider.getMeterReadings(meterKey, '2014-03-08', '2014-03-15', 'Hour', function (json) {
         lastWeek = convertValues(json);
+
+        var lastWeekSum = _.reduce(lastWeek, function(memo, reading) { return memo + reading.val; }, 0);
+        lastAwg = lastWeekSum / lastWeek.length;
+        groupAwg = lastAwg + 0.7;
+
         console.log('Done!');
     });
+
+    self.mainViewData = function () {
+        return {
+            thisWeek: thisWeek,
+            lastWeek: lastWeek,
+            thisWeekAwg: thisAwg,
+            lastWeekAwg: lastAwg,
+            thisGroupAwg: groupAwg
+        };
+    };
 
     self.thisWeek = function () {
         return thisWeek;
@@ -52,6 +71,18 @@ var JsonProvider = function () {
 
     self.lastWeek = function () {
         return lastWeek;
+    };
+
+    self.thisWeekAwg = function () {
+        return thisAwg;
+    };
+
+    self.lastWeekAwg = function () {
+        return lastAwg;
+    };
+
+    self.thisGroupAwg = function () {
+        return groupAwg;
     };
 
     self.achievementData = function() {
