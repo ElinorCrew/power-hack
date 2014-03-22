@@ -179,7 +179,16 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <div class="bigChart" data-bind='lineChart: [jsonData, averageGroupData, myAverageCurrentPowerData]'></div>
+        <div class="graph-header">
+          <span class="big-text">Ditt ukentlig strømforbruk</span>
+          <span class="color-text pull-right">Forrige ukes gjennomsnittsforbruk</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bigChart" data-bind='lineChart: [jsonData, myAverageCurrentPowerData]'></div>
       </div>
     </div><!-- /.row -->
   </div><!-- /#page-wrapper -->

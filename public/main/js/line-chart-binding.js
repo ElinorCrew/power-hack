@@ -4,7 +4,7 @@ ko.bindingHandlers.lineChart = {
     init: function(element) {
         "use strict";
 
-        var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        var margin = {top: 40, right: 40, bottom: 50, left: 55},
             elementWidth = parseInt(d3.select(element).style("width"), 10),
             elementHeight = parseInt(d3.select(element).style("height"), 10),
             width = elementWidth - margin.left - margin.right,
@@ -38,22 +38,13 @@ ko.bindingHandlers.lineChart = {
             .attr("y1", height)
             .attr("x2", width)
             .attr("y2", height)
-            .attr("style", "stroke: #ff7f0e; stroke-width:2")
-            .attr("stroke-dasharray", "20,10,5,5,5,10");
-
-        svg.append("line")
-            .attr("class", "awgClassData")
-            .attr("x1", 0)
-            .attr("y1", height)
-            .attr("x2", width)
-            .attr("y2", height)
-            .attr("style", "stroke: #2ca02c; stroke-width:2")
+            .attr("style", "stroke: #ff7f0e; stroke-width:3")
             .attr("stroke-dasharray", "20,10,5,5,5,10");
     },
     update: function(element, valueAccessor) {
         "use strict";
 
-        var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        var margin = {top: 40, right: 40, bottom: 50, left: 55},
             elementWidth = parseInt(d3.select(element).style("width"), 10),
             elementHeight = parseInt(d3.select(element).style("height"), 10),
             width = elementWidth - margin.left - margin.right,
@@ -62,8 +53,7 @@ ko.bindingHandlers.lineChart = {
             animationDuration = 750,
 
             data = ko.unwrap(valueAccessor()[0]),
-            groupAwg = ko.unwrap(valueAccessor()[1]),
-            myAwg = ko.unwrap(valueAccessor()[2]),
+            myAwg = ko.unwrap(valueAccessor()[1]),
 
             x = d3.time.scale()
                 .range([0, width]),
@@ -120,11 +110,5 @@ ko.bindingHandlers.lineChart = {
             .duration(animationDuration)
             .attr("y1", y(myAwg))
             .attr("y2", y(myAwg));
-
-        svg.select("line.awgClassData")
-            .transition()
-            .duration(animationDuration)
-            .attr("y1", y(groupAwg))
-            .attr("y2", y(groupAwg));
     }
 };

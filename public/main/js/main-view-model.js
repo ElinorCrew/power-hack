@@ -35,6 +35,8 @@ var PH = this.PH || {};
             var score = parseInt(2048 + 128 * self.myCurrentPowerData(), 10);
             return score;
         }, self);
+
+        self.quarterPowerConsumption = ko.observable(data.firstQuarter);
     };
 }(PH));
 
