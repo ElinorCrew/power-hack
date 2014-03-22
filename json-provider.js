@@ -130,7 +130,7 @@ var JsonProvider = function () {
                 {
                     id: "11",
                     name: "Lederen av gjengen",
-                    completed: true,
+                    completed: false,
                     img: "group",
                     description: "Spar mest strøm i vennegjengen din."
                 },
@@ -151,7 +151,7 @@ var JsonProvider = function () {
                 {
                     id: "14",
                     name: "Dvalemodus",
-                    completed: true,
+                    completed: false,
                     img: "moon",
                     description: "Lavest strømforbruk om natten blant vennene dine"
                 },
