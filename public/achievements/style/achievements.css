@@ -1,16 +1,13 @@
 .achievements-group{
     text-decoration: underline;
 }
-img{
-    position: relative;
-}
 
 .achievement-name {
     position: absolute;
     text-align: center;
     color:#000;
     background-color: #16A085;
-    width: 63%;
+    width: 72%;
     height: 82%;
     text-align: center;
     z-index: 10;
@@ -24,8 +21,11 @@ img{
     opacity:1;
 }
 
-.simple_overlay_img{
-    max-height:200px;
+.thumbnail.tile.locked{
+    background-color: grey;
+}
+.locked{
+    background-color: grey;
 }
 
 div#overlay {
@@ -39,10 +39,6 @@ div#overlay {
     left: 0px;
     text-align: center;
 }
-div#specialBox {
-
-}
-
 
 /* the overlayed element */
 .simple_overlay {
@@ -50,15 +46,12 @@ div#specialBox {
     position: fixed;
     top: 10%;
     left: 25%;
-
+    float: left;
     z-index: 1000;
     margin: 150px auto 0px auto;
     background-color:#333;
     color: #000;
     align-content: center;
-
-    /* must be initially hidden */
-    display:none;
 
     width:575px;
     height:200px;
@@ -69,18 +62,8 @@ div#specialBox {
     -webkit-box-shadow: 0 0 90px #000;
 }
 
-/* close button positioned on upper right corner */
-.simple_overlay .close {
-    background-image:url(images/close.png);
-    right:-15px;
-    top:-15px;
-    cursor:pointer;
-    height:35px;
-    width:35px;
-}
-
-.simple_overlay{
-    float: left;
+.simple_overlay_img{
+    max-height:200px;
 }
 
 /* styling for elements inside overlay */

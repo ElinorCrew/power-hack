@@ -25,5 +25,4 @@ $(document).keyup(function (e) {
             elements[i].style.display = "none";
         }
     }
-
 });
