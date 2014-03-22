@@ -44,6 +44,7 @@
                 <div class="sidebar-footer">
                     <a href="https://github.com/ElinorCrew/power-hack">Github</a>
                     <p>by ElinorCrew - #PowerHack2014</p>
+                </div>
             </ul>
 
             <ul class="nav navbar-nav navbar-right navbar-user">
@@ -65,7 +66,7 @@
 
         <div class="slidepanel">
             <h4> Du har fått en ny utmerkelse! </h4>
-            <img class="apanelicon" src="../achievements/style/images/energysavings.png"></img>
+            <img class="apanelicon" src="../achievements/style/images/energysavings.png"/>
             <p>Nyttårsforsett</p>
         </div>
 
@@ -180,9 +181,19 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="bigChart" data-bind='lineChart: [jsonData, averageGroupData, myAverageCurrentPowerData]'></div>
+                <div class="graph-header">
+                    <span class="big-text">Ditt ukentlig strømforbruk</span>
+                    <span class="color-text pull-right">Forrige ukes gjennomsnittsforbruk</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bigChart" data-bind='lineChart: [jsonData, myAverageCurrentPowerData]'></div>
             </div>
         </div><!-- /.row -->
+
     </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
 
