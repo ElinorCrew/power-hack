@@ -62,7 +62,9 @@ div#overlay {
     -webkit-box-shadow: 0 0 90px #000;
 }
 .overlayClose {
-    background-image: url('/public/achievements/style/images/close.png');
+
+    /*background-image: url('images/close.png');*/
+    background-image: url('http://jquerytools.org/media/img/overlay/close.png');
     position: absolute;
     right: -15px;
     top: -15px;
