@@ -44,7 +44,6 @@
                 <div class="sidebar-footer">
                     <a href="https://github.com/ElinorCrew/power-hack">Github</a>
                     <p>by ElinorCrew - #PowerHack2014</p>
-                </div>
             </ul>
 
             <ul class="nav navbar-nav navbar-right navbar-user">
@@ -66,7 +65,7 @@
 
         <div class="slidepanel">
             <h4> Du har fått en ny utmerkelse! </h4>
-            <img class="apanelicon" src="../achievements/style/images/energysavings.png" />
+            <img class="apanelicon" src="../achievements/style/images/energysavings.png"></img>
             <p>Nyttårsforsett</p>
         </div>
 
@@ -86,15 +85,43 @@
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-lg-3">
-                <div class="miniChart" data-bind="barChart: [myCurrentPowerData, maxJsonData, 'Din differanse']"></div>
+                <div class="panel bar">
+                    <div class="miniChart" data-bind="barChart: [myCurrentPowerData, maxJsonData, 'Gruppedifferanse']"></div>
+
+                    <a href="#">
+                        <div class="panel-footer announcement-bottom">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    Se poengberegning
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="col-lg-3">
-                <div class="miniChart" data-bind="barChart: [myCurrentGroupData, maxJsonData, 'Gruppedifferanse']"></div>
-            </div>
+                <div class="panel bar">
+                    <div class="miniChart" data-bind="barChart: [myCurrentGroupData, maxJsonData, 'Gruppedifferanse']"></div>
 
+                    <a href="#">
+                        <div class="panel-footer announcement-bottom">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    Se poengberegning
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <div class="col-lg-3">
                 <div class="panel panel-warning ">
                     <div class="panel-heading">
