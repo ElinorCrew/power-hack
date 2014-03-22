@@ -41,7 +41,7 @@ var PH = this.PH || {};
         self.myAverageCurrentPowerData = ko.observable(data.lastWeekAwg);
 
         self.myCurrentPowerData = ko.computed(function() {
-            return self.myAverageCurrentPowerData() - self.jsonData()[self.jsonData().length - 2].val;
+            return self.myAverageCurrentPowerData() - self.jsonData()[self.jsonData().length - 1].val;
         }, self);
 
         self.myScore = ko.computed(function () {
