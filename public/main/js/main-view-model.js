@@ -8,7 +8,7 @@ var PH = this.PH || {};
     namespace.mainViewModel = function(data) {
         var self = this;
 
-        self.jsonData = ko.observableArray(data);
+        self.jsonData = ko.observableArray(data.thisWeek);
 
         self.myCurrentAverageData = ko.observable(1);
 
