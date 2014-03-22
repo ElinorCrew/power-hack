@@ -55,7 +55,7 @@ div#overlay {
     display: none;
     position: fixed;
     top: 10%;
-    left: 25%;
+    left: 35%;
     float: left;
     z-index: 1000;
     margin: 150px auto 0px auto;
@@ -70,6 +70,17 @@ div#overlay {
     /* CSS3 styling for latest browsers */
     -moz-box-shadow:0 0 90px 5px #000;
     -webkit-box-shadow: 0 0 90px #000;
+}
+.overlayClose {
+
+    /*background-image: url('images/close.png');*/
+    background-image: url('http://jquerytools.org/media/img/overlay/close.png');
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
 }
 
 .simple_overlay_img{
