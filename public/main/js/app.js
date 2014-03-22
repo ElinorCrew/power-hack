@@ -6,7 +6,7 @@ var PH = this.PH || {};
     "use strict";
     var mainViewModel;
 
-    $.get("/json/february", function (data) {
+    $.get("/json/thisWeek", function (data) {
         mainViewModel = new PH.mainViewModel(data);
         ko.applyBindings(mainViewModel);
     });

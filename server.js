@@ -60,8 +60,12 @@ app.get('/json', function (req, res) {
     res.json(provider.meterReadings());
 });
 
-app.get('/json/february', function (req, res) {
-    res.json(provider.februaryData());
+app.get('/json/lastWeek', function (req, res) {
+    res.json(provider.lastWeek());
+});
+
+app.get('/json/thisWeek', function (req, res) {
+    res.json(provider.thisWeek());
 });
 
 app.get('/json/achievements', function (req, res) {
@@ -72,9 +76,7 @@ app.get('/json/highscore', function (req, res) {
     res.json(provider.highscore());
 });
 
-
-
 // Start server on given port
 app.listen(port);
 console.log('po\\/\\/er|-|ack started at http://localhost:' + port + '/');
-
+console.log('Updating cashe...');
