@@ -135,10 +135,10 @@
                 <div class="col-sm-6 col-md-2">
                     <div data-bind="attr: { class: completed == true ? 'thumbnail tile tile-green-sea' : 'locked thumbnail tile' }">
                         <!-- CSS be to much hacked. -->
-                        <a href="#">
+                        <img data-bind="attr: {src: img}">
+                        <a href="#" class="achievement-overlay" >
                             <p data-bind="text: name, attr { rel: rel, class: completed == true ? 'achievement-name' : 'achievement-name locked' }"
                                onclick="toggleVisibility(this);"></p>
-                            <img data-bind="attr: {src: img}">
                         </a>
                     </div>
                 </div>
