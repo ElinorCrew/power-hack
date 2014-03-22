@@ -52,14 +52,15 @@
     <div class="row">
         <p class="achievements-group">Generelle Utmerkelser</p>
 
+        <div lock="locked" id="hei"></div>
+
         <div data-bind="foreach: jsonData">
             <!-- Start Achievement -->
             <div class="col-sm-6 col-md-2">
-                <div class="thumbnail tile tile-green-sea">
+                <div data-bind="attr: { class: completed == true ? 'thumbnail tile tile-green-sea' : 'locked thumbnail tile' }">
                     <!-- CSS be to much hacked. -->
                     <a href="#">
-                        <p class="achievement-name"
-                           data-bind="text: name, attr { rel: rel }"
+                        <p data-bind="text: name, attr { rel: rel, class: completed == true ? 'achievement-name' : 'achievement-name locked' }"
                            onclick="toggleVisibility(this);"></p>
                         <img data-bind="attr: {src: img}">
                     </a>
@@ -110,6 +111,8 @@
 
 <!-- Overlay js -->
 <script type='text/javascript' src="js/achievements.js"></script>
+
+<script>greylist()</script>
 
 </body>
 </html>

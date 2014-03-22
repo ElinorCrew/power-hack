@@ -21,6 +21,13 @@
     opacity:1;
 }
 
+.thumbnail.tile.locked{
+    background-color: grey;
+}
+.locked{
+    background-color: grey;
+}
+
 div#overlay {
     display: none;
     z-index: 2;
