@@ -2,16 +2,16 @@
 
 'use strict';
 var express = require('express'),
-    url = require('url'),
-    _ = require('underscore'),
+url = require('url'),
+_ = require('underscore'),
 
-    JsonProvider = require('./json-provider').JsonProvider,
-    provider = new JsonProvider(),
+JsonProvider = require('./json-provider').JsonProvider,
+provider = new JsonProvider(),
 
-    port = process.env.PORT || 1704,
-    enviroment = process.env.NODE_ENV || 'local',
+port = process.env.PORT || 1704,
+enviroment = process.env.NODE_ENV || 'local',
 
-    app = express();
+app = express();
 
 /////////////////////////////////
 // General express server config
@@ -62,10 +62,10 @@ app.get('/json/february', function (req, res) {
 
 app.get('/json/achievements', function (req, res) {
     res.json(provider.achievementData());
+});
 
-    app.get('/json/highscore', function (req, res) {
-        res.json(provider.highscore());
-    });
+app.get('/json/highscore', function (req, res) {
+    res.json(provider.highscore());
 });
 
 // Start server on given port
