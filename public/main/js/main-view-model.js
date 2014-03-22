@@ -11,8 +11,6 @@ var PH = this.PH || {};
         self.time = 100;
 
         self.incrementTime = function  () {
-            console.log("jsonData"  +self.jsonData().length);
-            console.log(self.jsonDataFull().length);
             if (self.time >0) {
                 self.time = self.time -1;
                 self.jsonData.push(self.jsonDataFull.pop());
