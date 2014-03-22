@@ -16,12 +16,8 @@
     height: 15px;
 }
 
-.background {
-    /*background-color: #ffffff;*/
-}
-
 .score {
-    fill: steelblue;
+    fill: #16A085;
 }
 
 .score-text {
@@ -30,8 +26,7 @@
 
 .friendbutton{
 	margin-bottom: 20px;
-	background-color: #d8e9c2;
+    background-color: #16A085;
 	border: none;
 	color: black;
-
 }

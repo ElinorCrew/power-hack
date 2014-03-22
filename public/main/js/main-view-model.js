@@ -36,7 +36,9 @@ var PH = this.PH || {};
             return score;
         }, self);
 
-        self.quarterPowerConsumption = ko.observable(data.firstQuarter);
+        self.quarterPowerConsumption = ko.computed(function() {
+            return Math.round(data.firstQuarter);
+        }, self);
     };
 }(PH));
 
