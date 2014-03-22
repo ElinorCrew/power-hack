@@ -104,14 +104,25 @@
           </a>
         </div>
       </div>
+
       <div class="col-lg-3">
-        <div class="panel bar">
-        <div class="miniChart" data-bind="barChart: [myCurrentGroupData, maxJsonData, 'Forbruk hittil dette kvartal']"></div>
-            <a href="#">
+        <div class="panel panel-warning ">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <i class="fa fa-check fa-5x"></i>
+              </div>
+              <div class="col-xs-8 col-xs-offset-4 text-right">
+                <p class="announcement-heading"><span data-bind="text: quarterPowerConsumption"></span><span style="font-size:30px"> kWh</span></p>
+                <p class="announcement-text">Forbruk hittil dette kvartal</p>
+              </div>
+            </div>
+          </div>
+          <a href="#">
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
-                  Hva er dette?
+                  Se poengberegning
                 </div>
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
@@ -120,8 +131,7 @@
             </div>
           </a>
         </div>
-      </div>
-      <div class="col-lg-3">
+      </div><div class="col-lg-3">
         <div class="panel panel-warning ">
           <div class="panel-heading">
             <div class="row">
@@ -129,7 +139,7 @@
                 <i class="fa fa-check fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading">3412</p>
+                <p class="announcement-heading" data-bind="text: myScore"></p>
                 <p class="announcement-text">Total poengsum</p>
               </div>
             </div>
