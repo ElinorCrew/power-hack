@@ -56,7 +56,7 @@ ko.bindingHandlers.barChart = {
         .style("font-size","14")
         .attr("fill", gray)
         .attr("text-anchor", "middle")
-        .attr("x", width*0.7)
+        .attr("x", width*0.5)
         .attr("y", height/2-35);
 
     },
@@ -109,7 +109,7 @@ ko.bindingHandlers.barChart = {
 
         d3.select(element).select("text.barTitle")
         .attr("fill", c(data).darker())
-        .attr("x", width*0.80)
+        .attr("x", width*0.75)
         .attr("y", height/2+35);
 
         d3.select(element).select("text.barValueUnit")
