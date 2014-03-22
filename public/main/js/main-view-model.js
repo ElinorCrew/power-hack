@@ -8,7 +8,19 @@ var PH = this.PH || {};
     namespace.mainViewModel = function(data) {
         var self = this;
 
-        self.jsonData = ko.observableArray(data.thisWeek);
+        self.time = 100;
+
+        self.incrementTime = function  () {
+            if (self.time >0) {
+                self.time = self.time -1;
+                self.jsonData.push(self.jsonDataFull.pop());
+            };
+        }
+
+        self.jsonDataFull = ko.observableArray(data.thisWeek.slice(data.thisWeek.length-self.time, data.thisWeek.length).reverse());
+
+        self.jsonData = ko.observableArray(data.thisWeek.slice(0, data.thisWeek.length-self.time));
+
 
         self.maxJsonData = ko.computed(function() {
             return d3.max(self.jsonData(), function (d) { return d.val; });
@@ -17,6 +29,7 @@ var PH = this.PH || {};
         self.scaleBarData = function (value) {
             return value * 2 / self.maxJsonData();
         };
+
 
         self.averageGroupData = ko.observable(data.thisGroupAwg);
 
@@ -39,6 +52,10 @@ var PH = this.PH || {};
         self.quarterPowerConsumption = ko.computed(function() {
             return Math.round(data.firstQuarter);
         }, self);
+
+        setInterval(function () {
+            self.incrementTime();
+        }, 5000);
     };
 }(PH));
 
