@@ -93,7 +93,7 @@ var JsonProvider = function () {
                     name: "Earth Hour",
                     completed: false,
                     img: "earth",
-                    description: "60 min no power usage, http://www.earthhour.org/"
+                    description: "Ingen strømforbruk i en time, http://www.earthhour.org/"
                 },
                 {
                     id: "2",
@@ -191,7 +191,7 @@ var JsonProvider = function () {
                     name: "5:2-dietten",
                     completed: true,
                     img: "meter",
-                    description: "Oppnå 5 dager i uken der strømforbruket ditt er lavere enn hos vennne dine."
+                    description: "Oppnå 5 dager i uken der strømforbruket ditt er lavere enn hos vennene dine."
                 },
                 {
                     id: "16",
