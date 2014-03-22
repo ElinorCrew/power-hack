@@ -1,6 +1,6 @@
 /*global ko, d3*/
 var red = d3.rgb('#F07C7C');
-var green = d3.rgb('#d6e9c6');
+var green = d3.rgb('#16A085');
 var gray = d3.rgb("#f5f5f5");
 
 ko.bindingHandlers.barChart = {

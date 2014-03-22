@@ -57,14 +57,14 @@ ko.bindingHandlers.highscoreBar = {
             .transition()
             .delay(4 * x(data[0]))
             .duration(750)
-            .style("fill", "#ffd700");
+            .style("fill", "#16A085");
         }
         if (data[2]) {
             svg.select("rect.score")
             .transition()
             .delay(4 * x(data[0]))
             .duration(750)
-            .style("fill", "#46B44C");
+            .style("fill", "red");
         }
     }
 };
