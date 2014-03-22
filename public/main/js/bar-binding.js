@@ -69,8 +69,6 @@ ko.bindingHandlers.barChart = {
             return green;
         };
 
-        console.log(ko.unwrap(valueAccessor()));
-
         d3.select(element).select("rect.barRect")
         .transition()
         .duration(750)

@@ -1,31 +1,101 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
-    <title>Utmerkelser</title>
+    <title>Main</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
 
-    <script type='text/javascript' src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" charset="utf-8"></script>
     <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
-
-    <!-- ref: http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js -->
-    <script src="js/vendor/jquery.tools.min.js"></script>
-    <script src="js/achievements.js"></script>
-
-    <link rel="stylesheet" href="../style/bootstrap.min.css">
-    <link rel="stylesheet" href="../style/bar-chart-demo.css">
-    <link rel="stylesheet" href="../style/gh-fork-ribbon.css">
-    <link rel="stylesheet" href="style/achievements.css">
+    <script type='text/javascript' src="http://code.jquery.com/jquery-1.11.0.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" charset="utf-8"></script>
 
     <!-- ref: http://talkslab.com/metro-bootstrap/components.html -->
     <link rel="stylesheet" href="../style/vendor/metro-bootstrap/metro-bootstrap.css">
+    <link rel="stylesheet" href="../style/vendor/bootstrap.min.css">
 
+    <link href="../style/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/custom.css">
+    <link rel="stylesheet" href="style/achievements.css">
 </head>
 
 <body>
+<div id="overlay"></div>
+<div id="wrapper">
 
-    <div class="container">
-        <h1>Utmerkelser</h1>
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <img class="avatarmain img-circle" src="../style/images/inga_marte.jpg">
+                <h3 class="avatartext">Inga Marte</h3>
+                <p class="avatarnumber">Kundenr.: 23159124</p>
+
+                <li class="sidebarlinks"><span class="hdivider"></span><a href="/main"><img class="iconsize" src="../style/images/house.png"/><i class="fa fa-dashboard"></i> Min side </a></li>
+                <li class="sidebarlinks"><span class="hdivider"></span><a href="/highscore"><img class="iconsize" src="../style/images/friends.png"/><i class=""></i> Mine Venner </a></li>
+                <li class="active sidebarlinks"><span class="hdivider"></span><a href="/achievements"><img class="iconsize" src="../style/images/ribbon.png"/><i class=""></i> Utmerkelser </a></li>
+                <p class="sidebar-footer">by ElinorCrew - #PowerHack2014</p>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right navbar-user">
+                <li class="dropdown messages-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Meldinger <span class="badge">7</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">7 nye meldinger</li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <span class="avatar"><img src="../style/images/tordlien50.png"></span>
+                                <span class="name">Tord Lien:</span>
+                                <span class="message">Heisann, det var noe jeg ville spørre deg om...</span>
+                                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <span class="avatar"><img src="../style/images/tronderlogo.jpg"></span>
+                                <span class="name">TrønderEnergi:</span>
+                                <span class="message">Siden du har spart strøm den siste måneden så...</span>
+                                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <span class="avatar"><img src="../style/images/tordlien50.png"></span>
+                                <span class="name">Tord Lien:</span>
+                                <span class="message">Hvorfor svarer du ikke når jeg ringer? Kjære, Inga Marte...</span>
+                                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#">Innboks <span class="badge">7</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown user-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Inga Marte Thorkildsen <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Innboks <span class="badge">7</span></a></li>
+                        <li><a href="#"><i class="fa fa-gear"></i> Innstillinger</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i> Logg ut </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div id="page-wrapper">
 
         <div class="hero-unit">
             <h4>
@@ -34,8 +104,8 @@
         </div>
 
         <hr>
-
-        <!-- Achievements list:
+        <!--
+            Achievements list:
             #(5stk) generelle achievements
             Earth Hour: 60 min no power usage, http://www.earthhour.org/
             Lyset-av-om-natta: en natt uten forbruk. (typisk sommer achievement)
@@ -56,63 +126,72 @@
             Piken med svovelstikkene: Lavest strømforbruk blant vennene dine på nyttårsaften.
             Dvalemodus: Lavest strømforbruk om natta blant vennne dine.
             5:2-dietten: 5 dager i uken der strømforbruket ditt er lavere enn hos vennene dine.
-
         -->
 
         <div class="row">
-            <p class="achievements-group">Generelle Utmerkelser</p>
 
-            <!-- Start Achievement -->
-            <div class="col-sm-6 col-md-2">
-                <div class="thumbnail tile tile-green-sea">
-                    <!-- CSS be to much hacked. -->
-                    <a href="#">
-                        <p class="text" rel="#earth_hour">
-                            Earth Hour <br />
-                            (klikk for detaljer)
-                        </p>
-                        <img src="style/images/greenenergy2.png">
-                    </a>
+            <div data-bind="foreach: jsonData">
+                <!-- Start Achievement -->
+                <div class="col-sm-6 col-md-2">
+                    <div data-bind="attr: { class: completed == true ? 'thumbnail tile tile-green-sea' : 'locked thumbnail tile' }">
+                        <!-- CSS be to much hacked. -->
+                        <a href="#">
+                            <p data-bind="text: name, attr { rel: rel, class: completed == true ? 'achievement-name' : 'achievement-name locked' }"
+                               onclick="toggleVisibility(this);"></p>
+                            <img data-bind="attr: {src: img}">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <!-- Overlay with description -->
-            <div id="earth_hour" class="simple_overlay">
-                <img src="style/images/greenenergy2.png" class="simple_overlay_img">
-                <div class="details">
-                    <h3>Earth Hour</h3>
-                    <h4>
-                        60 minutter uten lys 29 mars.
-                    </h4>
-                    <p>
-                        Du oppnår Utmerkelsen ved å ha et mindre forbruk enn ukes gjennomsnittet denne uken.
-                    </p>
+                <!-- Overlay with description -->
+                <div class="simple_overlay" data-bind="attr: { id: id, rel: rel }"
+                     onclick="toggleVisibility(this);">
+                    <!-- TODO -->
+                    <img src="style/images/close.png" class="simple_overlay close">
+
+                    <img data-bind="attr: {src: img}" class="simple_overlay_img">
+                    <div class="details">
+                        <h3 data-bind="text: name" />
+                        <h4 data-bind="text: description" />
+                    </div>
                 </div>
             </div>
             <!-- End Achievement -->
-
         </div>
 
-        <div class="row">
-            <p class="achievements-group">E-gruppe Utmerkelser</p>
-        </div>
+    </div><!-- /#page-wrapper -->
+</div>
 
-        <div class="row">
-            <p class="achievements-group">Kompis Utmerkelser</p>
-        </div>
+    <script src="../assets/jquery-1.10.2.js"></script>
+    <script src="../assets/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/achievement-view-model.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
 
-        <hr>
+    <!-- Overlay js -->
+    <script type='text/javascript' src="js/achievements.js"></script>
 
-        <footer>
-            <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
-            <p>
-                ElinorCrew@PowerHack2014 &middot;
-                <a href="https://twitter.com/spohner">Steffen Pöhner</a> &middot;
-                <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
-                <a href="https://twitter.com/georgekw89">George Lee</a> &middot;
-                <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
-                <a href="https://twitter.com/_teodoran">Teodor Elstad</a>
-            </p>
-        </footer>
-    </div>
+    <!-- TODO: remove this before prodution  -->
+    <script>
+        var ws;
+        function socket() {
+            ws = new WebSocket("ws://127.0.0.1:8080");
+            ws.onmessage = function ( e ) {
+                var data = JSON.parse(e.data);
+                if ( data.r ) {
+                    location.reload();
+                }
+            };
+        }
+        setInterval(function () {
+            if ( ws ) {
+                if ( ws.readyState !== 1 ) {
+                    socket();
+                }
+            } else {
+                socket();
+            }
+        }, 1000);
+    </script>
+
+
 </body>
 </html>

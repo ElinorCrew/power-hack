@@ -4,17 +4,15 @@
 var express = require('express'),
     url = require('url'),
     _ = require('underscore'),
-
     JsonProvider = require('./json-provider').JsonProvider,
-    provider = new JsonProvider(),
-
     // ApiDataProvider = require('./api-data-provider').ApiDataProvider,
     // apiProvider = new ApiDataProvider(),
-
+    provider = new JsonProvider(),
     port = process.env.PORT || 1704,
     enviroment = process.env.NODE_ENV || 'local',
-
     app = express();
+
+
 
 /////////////////////////////////
 // General express server config
@@ -66,6 +64,10 @@ app.get('/json/february', function (req, res) {
     res.json(provider.februaryData());
 });
 
+app.get('/json/achievements', function (req, res) {
+    res.json(provider.achievementData());
+});
+
 app.get('/json/highscore', function (req, res) {
     res.json(provider.highscore());
 });
@@ -75,3 +77,4 @@ app.get('/json/highscore', function (req, res) {
 // Start server on given port
 app.listen(port);
 console.log('po\\/\\/er|-|ack started at http://localhost:' + port + '/');
+
