@@ -130,10 +130,10 @@ var JsonProvider = function () {
             },
             {
                 id: "18",
-                name: "Nedskjæring",
+                name: "Småtteri",
                 completed: true,
-                img: "greenenergy2",
-                description: "Redusert strømforbruket med minst 20 % fra i fjor."
+                img: "lightbulb2",
+                description: "Redusert strømforbruket med minst 5 % fra i fjor."
             }
         ]
         };
