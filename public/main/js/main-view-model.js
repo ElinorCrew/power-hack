@@ -23,7 +23,7 @@ var PH = this.PH || {};
 
 
         self.maxJsonData = ko.computed(function() {
-            return d3.max(self.jsonData(), function (d) { return d.val; });
+            return d3.max(self.jsonData(), function (d) { return d.val; })/2;
         }, self);
 
         self.scaleBarData = function (value) {
