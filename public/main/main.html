@@ -94,8 +94,8 @@
             <a href="#">
             <div class="panel-footer announcement-bottom">
               <div class="row">
-                <div class="col-xs-6">
-                  Se poengberegning
+                <div class="col-xs-6 clickme">
+                  Hva betyr dette?
                 </div>
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
@@ -112,8 +112,8 @@
             <a href="#">
             <div class="panel-footer announcement-bottom">
               <div class="row">
-                <div class="col-xs-6">
-                  Se poengberegning
+                <div class="col-xs-6 clickme">
+                  Hva betyr dette?
                 </div>
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
@@ -139,8 +139,8 @@
           <a href="#">
             <div class="panel-footer announcement-bottom">
               <div class="row">
-                <div class="col-xs-6">
-                  Se poengberegning
+                <div class="col-xs-6 clickme">
+                  Hva betyr dette?
                 </div>
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
@@ -167,7 +167,7 @@
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
-                  Se utmerkelser
+                  <a href="/achievements">Se alle utmerkelser</a>
                 </div>
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
@@ -178,6 +178,31 @@
         </div>
       </div>
     </div><!-- /.row -->
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="tooltip-gray" id="tooltip">
+          <div class="col-lg-3">
+            <b>Forskjell i ukentlig forbruk</b> er forskjellen på hvor mye strøm du bruker nå, og snittforbruket ditt forrige uke. Hvis tallet er positivt bruker du mindre strøm enn forrige uke. Er tallet negativt bruker du mer strøm.
+          </div>
+          <div class="col-lg-3">
+            <b>Forbruk hittil dette kvartal</b> er summen av all strøm du har brukt hittil dette kvartalet.
+          </div>
+          <div class="col-lg-6 pull-right">
+            <b>Total poengsum</b> beregnes på bakgrunn av din forskjell i det ukentlig forbruket. Det er med disse poengene du kan konkurrere med vennene dine. Alle starter med 2048 poeng. Hvis du har klart å spare strøm, vil du få en bonus i poengsummen. Hvis du har brukt med strøm denne uken blir det fratrekk.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+    $( ".clickme" ).click(function() {
+      $( "#tooltip" ).toggle( "slow", function() {
+        // Animation complete.
+      });
+    });
+    </script>
 
     <div class="row">
       <div class="col-lg-12">

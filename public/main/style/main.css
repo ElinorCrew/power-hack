@@ -17,6 +17,16 @@
 	background-color: rgb(241, 241, 241);	
 }
 
+.tooltip-gray {
+	height: 130px;
+	padding: 20px 36px 20px 36px;
+	margin-bottom: 22px;
+	color: #ffffff;
+	background-color: #101010;
+	opacity:0.5;
+	display: none;
+}
+
 .big-text {
 	font-size: 36px;
 }
