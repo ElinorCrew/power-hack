@@ -1,99 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Main</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Main</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
 
-    <script type='text/javascript' src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://code.jquery.com/jquery-1.11.0.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" charset="utf-8"></script>
+  <script type='text/javascript' src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" charset="utf-8"></script>
+  <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
+  <script type='text/javascript' src="http://code.jquery.com/jquery-1.11.0.min.js" charset="utf-8"></script>
+  <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" charset="utf-8"></script>
 
-    <link rel="stylesheet" href="../style/vendor/bootstrap.min.css">
-    <link href="../style/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/custom.css">
-    <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="../style/vendor/bootstrap.min.css">
+  <link href="../style/sb-admin.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style/custom.css">
+  <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
  <div id="wrapper">
 
-    <!-- Sidebar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+  <!-- Sidebar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-  </div>
+    </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav side-nav">
-      <img class="avatarmain img-circle" src="../style/images/inga_marte.jpg">
-      <h3 class="avatartext">Inga Marte</h3>
-      <p class="avatarnumber">Kundenr.: 23159124</p>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <img class="avatarmain img-circle" src="../style/images/inga_marte.jpg">
+        <h3 class="avatartext">Inga Marte</h3>
+        <p class="avatarnumber">Kundenr.: 23159124</p>
 
-      <li class="active sidebarlinks"><span class="hdivider"></span><a href="/main"><img class="iconsize" src="../style/images/house.png"/><i class="fa fa-dashboard"></i> Min side </a></li>
-      <li class="sidebarlinks"><span class="hdivider"></span><a href="/highscore"><img class="iconsize" src="../style/images/friends.png"/><i class=""></i> Mine Venner </a></li>
-      <li class="sidebarlinks"><span class="hdivider"></span><a href="/achievements"><img class="iconsize" src="../style/images/ribbon.png"/><i class=""></i> Utmerkelser </a></li>
-      <p class="sidebar-footer">by ElinorCrew - #PowerHack2014</p>
-  </ul>
+        <li class="active sidebarlinks"><span class="hdivider"></span><a href="/main"><img class="iconsize" src="../style/images/house.png"/><i class="fa fa-dashboard"></i> Min side </a></li>
+        <li class="sidebarlinks"><span class="hdivider"></span><a href="/highscore"><img class="iconsize" src="../style/images/friends.png"/><i class=""></i> Mine Venner </a></li>
+        <li class="sidebarlinks"><span class="hdivider"></span><a href="/achievements"><img class="iconsize" src="../style/images/ribbon.png"/><i class=""></i> Utmerkelser </a></li>
+        <p class="sidebar-footer">by ElinorCrew - #PowerHack2014</p>
+      </ul>
 
-  <ul class="nav navbar-nav navbar-right navbar-user">
-      <li class="dropdown messages-dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Meldinger <span class="badge">7</span> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-header">7 nye meldinger</li>
-          <li class="message-preview">
-            <a href="#">
-              <span class="avatar"><img src="../style/images/tordlien50.png"></span>
-              <span class="name">Tord Lien:</span>
-              <span class="message">Heisann, det var noe jeg ville spørre deg om...</span>
-              <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-          </a>
-      </li>
-      <li class="divider"></li>
-      <li class="message-preview">
-        <a href="#">
-          <span class="avatar"><img src="../style/images/tronderlogo.jpg"></span>
-          <span class="name">TrønderEnergi:</span>
-          <span class="message">Siden du har spart strøm den siste måneden så...</span>
-          <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-      </a>
-  </li>
-  <li class="divider"></li>
-  <li class="message-preview">
-    <a href="#">
-      <span class="avatar"><img src="../style/images/tordlien50.png"></span>
-      <span class="name">Tord Lien:</span>
-      <span class="message">Hvorfor svarer du ikke når jeg ringer? Kjære, Inga Marte...</span>
-      <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-  </a>
-</li>
-<li class="divider"></li>
-<li><a href="#">Innboks <span class="badge">7</span></a></li>
-</ul>
-</li>
-<li class="dropdown user-dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Inga Marte Thorkildsen <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-      <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
-      <li><a href="#"><i class="fa fa-envelope"></i> Innboks <span class="badge">7</span></a></li>
-      <li><a href="#"><i class="fa fa-gear"></i> Innstillinger</a></li>
-      <li class="divider"></li>
-      <li><a href="#"><i class="fa fa-power-off"></i> Logg ut </a></li>
-  </ul>
-</li>
-</ul>
-</div><!-- /.navbar-collapse -->
-</nav>
+      <ul class="nav navbar-nav navbar-right navbar-user">
+        <li class="dropdown messages-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Meldinger <span class="badge">7</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">7 nye meldinger</li>
+            <li class="message-preview">
+              <a href="#">
+                <span class="avatar"><img src="../style/images/tordlien50.png"></span>
+                <span class="name">Tord Lien:</span>
+                <span class="message">Heisann, det var noe jeg ville spørre deg om...</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li class="message-preview">
+              <a href="#">
+                <span class="avatar"><img src="../style/images/tronderlogo.jpg"></span>
+                <span class="name">TrønderEnergi:</span>
+                <span class="message">Siden du har spart strøm den siste måneden så...</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li class="message-preview">
+              <a href="#">
+                <span class="avatar"><img src="../style/images/tordlien50.png"></span>
+                <span class="name">Tord Lien:</span>
+                <span class="message">Hvorfor svarer du ikke når jeg ringer? Kjære, Inga Marte...</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">Innboks <span class="badge">7</span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown user-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Inga Marte Thorkildsen <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i> Innboks <span class="badge">7</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i> Innstillinger</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-power-off"></i> Logg ut </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
 
-<div id="page-wrapper">
+  <div id="page-wrapper">
+
+    <div class="slidepanel">
+      <h4> Du har fått en ny utmerkelse! </h4>
+      <img class="apanelicon" src="../achievements/style/images/energysavings.png"></img>
+      <p>Nyttårsforsett</p>
+      </div>
 
   <div class="row">
     <div class="col-lg-12">
@@ -107,8 +113,6 @@
                 flink du er til å spare strøm.
                 <br />Kanskje får du en bonus også?
             </p>
-    </div>
-</div><!-- /.row -->
 
 <!--   <div class="row">
     <div class="col-lg-12">
@@ -117,102 +121,103 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 Velkommen til din strømsentral på nettet. Her kan du se statistikk basert på ditt strømforbruk og opparbeide deg poeng etter hvor flink du er til å spare strøm. Kanskje får du en bonus også?
             </div>
-        </div>
+        </div> -->
     </div>
-</div><!-- /.row --> 
+  </div>
+  </div>
 
-<div class="row">
-  <div class="col-lg-3">
+  <div class="row">
+    <div class="col-lg-3">
       <div class="panel panel-warning ">
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-6">
               <i class="fa fa-check fa-5x"></i>
-          </div>
-          <div class="col-xs-6 text-right">
+            </div>
+            <div class="col-xs-6 text-right">
               <p class="announcement-heading">3412</p>
               <p class="announcement-text">Total poengsum</p>
+            </div>
           </div>
-      </div>
-  </div>
-  <a href="#">
-      <div class="panel-footer announcement-bottom">
-        <div class="row">
-          <div class="col-xs-6">
-            Se poengberegning
         </div>
-        <div class="col-xs-6 text-right">
-            <i class="fa fa-arrow-circle-right"></i>
+        <a href="#">
+          <div class="panel-footer announcement-bottom">
+            <div class="row">
+              <div class="col-xs-6">
+                Se poengberegning
+              </div>
+              <div class="col-xs-6 text-right">
+                <i class="fa fa-arrow-circle-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <i class="fa fa-tasks fa-5x"></i>
+            </div>
+            <div class="col-xs-6 text-right">
+              <p class="announcement-heading">4/24</p>
+              <p class="announcement-text">Utmerkelser oppnådd</p>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
-</a>
-</div>
-</div>
-<div class="col-lg-3">
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col-xs-6">
-          <i class="fa fa-tasks fa-5x"></i>
+        <a href="#">
+          <div class="panel-footer announcement-bottom">
+            <div class="row">
+              <div class="col-xs-6">
+                Se utmerkelser
+              </div>
+              <div class="col-xs-6 text-right">
+                <i class="fa fa-arrow-circle-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="col-xs-6 text-right">
-          <p class="announcement-heading">4/24</p>
-          <p class="announcement-text">Utmerkelser oppnådd</p>
+    </div>
+    <div class="col-lg-3">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <i class="fa fa-comments fa-5x"></i>
+            </div>
+            <div class="col-xs-6 text-right">
+              <p class="announcement-heading">2103</p>
+              <p class="announcement-text">kroner spart</p>
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <div class="panel-footer announcement-bottom">
+            <div class="row">
+              <div class="col-xs-6">
+                Se besparelser
+              </div>
+              <div class="col-xs-6 text-right">
+                <i class="fa fa-arrow-circle-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-  </div>
-</div>
-<a href="#">
-  <div class="panel-footer announcement-bottom">
-    <div class="row">
-      <div class="col-xs-6">
-        Se utmerkelser
     </div>
-    <div class="col-xs-6 text-right">
-        <i class="fa fa-arrow-circle-right"></i>
+    <div class="col-lg-3">
+      <div class="miniChart" data-bind="barChart: [myCurrentAverageData, 'Nice Title!']"></div>
     </div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="col-lg-3">
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col-xs-6">
-          <i class="fa fa-comments fa-5x"></i>
-      </div>
-      <div class="col-xs-6 text-right">
-          <p class="announcement-heading">2103</p>
-          <p class="announcement-text">kroner spart</p>
-      </div>
-  </div>
-</div>
-<a href="#">
-  <div class="panel-footer announcement-bottom">
-    <div class="row">
-      <div class="col-xs-6">
-        Se besparelser
-    </div>
-    <div class="col-xs-6 text-right">
-        <i class="fa fa-arrow-circle-right"></i>
-    </div>
-</div>
-</div>
-</a>
-</div>
-</div>
-  <div class="col-lg-3">
-  <div class="miniChart" data-bind="barChart: [myCurrentAverageData, 'Nice Title!']"></div>
-  </div>
-</div><!-- /.row -->
+  </div><!-- /.row -->
 
-<div class="row">
+  <div class="row">
     <div class="col-lg-12">
-        <div class="bigChart" data-bind='lineChart: jsonData'></div>
+      <div class="bigChart" data-bind='lineChart: jsonData'></div>
     </div>
-</div><!-- /.row -->
+  </div><!-- /.row -->
 
 </div><!-- /#page-wrapper -->
 
@@ -225,27 +230,53 @@
 <script type='text/javascript' src='js/line-chart-binding.js'></script>
 <script type='text/javascript' src='js/app.js'></script>
 
+<script>
+
+  function animatepanelback(){
+    $( ".slidepanel" ).animate({
+      right: "-200px",
+    }, 1000, function() {}
+    );
+  }
+
+  function animatepanel(){
+    $( ".slidepanel" ).animate({
+      right: "0",
+    }, 1000, function() {}
+    );
+  }
+
+    $(document).ready(function(){
+    setTimeout(function(){
+      animatepanel()}, 6000);
+    setTimeout(function(){
+      animatepanelback()}, 12000);
+});
+
+
+</script>
+
 <!-- TODO: remove this before prodution  -->
 <script>
-    var ws;
-    function socket() {
-        ws = new WebSocket("ws://127.0.0.1:8080");
-        ws.onmessage = function ( e ) {
-            var data = JSON.parse(e.data);
-            if ( data.r ) {
-                location.reload();
-            }
-        };
+  var ws;
+  function socket() {
+    ws = new WebSocket("ws://127.0.0.1:8080");
+    ws.onmessage = function ( e ) {
+      var data = JSON.parse(e.data);
+      if ( data.r ) {
+        location.reload();
+      }
+    };
+  }
+  setInterval(function () {
+    if ( ws ) {
+      if ( ws.readyState !== 1 ) {
+        socket();
+      }
+    } else {
+      socket();
     }
-    setInterval(function () {
-        if ( ws ) {
-            if ( ws.readyState !== 1 ) {
-                socket();
-            }
-        } else {
-            socket();
-        }
-    }, 1000);
+  }, 1000);
 </script>
 </body>
 </html>
