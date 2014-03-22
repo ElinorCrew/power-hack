@@ -7,6 +7,26 @@ var JsonProvider = function () {
     'use strict';
     var self = this;
 
+    self.achievementData = function(){
+        return { achievements: [
+            {
+                id: "earth_hour",
+                name: "Earth Hour",
+                completed: false,
+                img: "earth",
+                description: "60 min no power usage, http://www.earthhour.org/"
+            },
+            {
+                id: "lyset_av",
+                name: "Lyset av om natta",
+                completed: true,
+                img: "lightbulb2",
+                description: "en natt uten forbruk. (typisk sommer achievement)"
+            }
+        ]
+        };
+    }
+
     self.highscore = function () {
         return {
             "friends": [

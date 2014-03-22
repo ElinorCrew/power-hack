@@ -8,11 +8,7 @@
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" charset="utf-8"></script>
     <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
 
-    <!-- ref: http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js -->
-    <script src="js/vendor/jquery.tools.min.js"></script>
-    <script src="js/achievements.js"></script>
-
-    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../style/bar-chart-demo.css">
     <link rel="stylesheet" href="../style/gh-fork-ribbon.css">
     <link rel="stylesheet" href="style/achievements.css">
@@ -23,18 +19,17 @@
 </head>
 
 <body>
+<div id="overlay"></div>
+<div class="container">
+    <h1>Utmerkelser</h1>
 
-    <div class="container">
-        <h1>Utmerkelser</h1>
+    <div class="hero-unit">
+        <h4>
+            Denne siden beskriver de utmerkelser du har og kan få.
+        </h4>
+    </div>
 
-        <div class="hero-unit">
-            <h4>
-                Denne siden beskriver de utmerkelser du har og kan få.
-            </h4>
-        </div>
-
-        <hr>
-
+    <hr>
         <!-- Achievements list:
             #(5stk) generelle achievements
             Earth Hour: 60 min no power usage, http://www.earthhour.org/
@@ -57,62 +52,69 @@
             Dvalemodus: Lavest strømforbruk om natta blant vennne dine.
             5:2-dietten: 5 dager i uken der strømforbruket ditt er lavere enn hos vennene dine.
 
-        -->
+    -->
 
-        <div class="row">
-            <p class="achievements-group">Generelle Utmerkelser</p>
+    <div class="row">
+        <p class="achievements-group">Generelle Utmerkelser</p>
 
+        <div data-bind="foreach: jsonData">
             <!-- Start Achievement -->
             <div class="col-sm-6 col-md-2">
                 <div class="thumbnail tile tile-green-sea">
                     <!-- CSS be to much hacked. -->
                     <a href="#">
-                        <p class="text" rel="#earth_hour">
-                            Earth Hour <br />
-                            (klikk for detaljer)
-                        </p>
-                        <img src="style/images/greenenergy2.png">
+                        <p class="achievement-name"
+                           data-bind="text: name, attr { rel: rel }"
+                           onclick="toggleVisibility(this);"></p>
+                        <img data-bind="attr: {src: img}">
                     </a>
                 </div>
             </div>
             <!-- Overlay with description -->
-            <div id="earth_hour" class="simple_overlay">
-                <img src="style/images/greenenergy2.png" class="simple_overlay_img">
+            <div class="simple_overlay" data-bind="attr: { id: id, rel: rel }"
+                 onclick="toggleVisibility(this);">
+                <img src="style/images/close.png" class="simple_overlay close">
+                <img data-bind="attr: {src: img}" class="simple_overlay_img">
                 <div class="details">
-                    <h3>Earth Hour</h3>
-                    <h4>
-                        60 minutter uten lys 29 mars.
-                    </h4>
-                    <p>
-                        Du oppnår Utmerkelsen ved å ha et mindre forbruk enn ukes gjennomsnittet denne uken.
-                    </p>
+                    <h3 data-bind="text: name" />
+                    <h4 data-bind="text: description" />
                 </div>
             </div>
-            <!-- End Achievement -->
-
         </div>
+        <!-- End Achievement -->
 
-        <div class="row">
-            <p class="achievements-group">E-gruppe Utmerkelser</p>
-        </div>
-
-        <div class="row">
-            <p class="achievements-group">Kompis Utmerkelser</p>
-        </div>
-
-        <hr>
-
-        <footer>
-            <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
-            <p>
-                ElinorCrew@PowerHack2014 &middot;
-                <a href="https://twitter.com/spohner">Steffen Pöhner</a> &middot;
-                <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
-                <a href="https://twitter.com/georgekw89">George Lee</a> &middot;
-                <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
-                <a href="https://twitter.com/_teodoran">Teodor Elstad</a>
-            </p>
-        </footer>
     </div>
+
+    <div class="row">
+        <p class="achievements-group">E-gruppe Utmerkelser</p>
+    </div>
+
+    <div class="row">
+        <p class="achievements-group">Kompis Utmerkelser</p>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p class="pull-right"><a href="https://github.com/ElinorCrew/power-hack">GitHub</a></p>
+        <p>
+            ElinorCrew@PowerHack2014 &middot;
+            <a href="https://twitter.com/spohner">Steffen Pöhner</a> &middot;
+            <a href="https://twitter.com/SimenGranlund">Simen Granlund</a> &middot;
+            <a href="https://twitter.com/georgekw89">George Lee</a> &middot;
+            <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
+            <a href="https://twitter.com/_teodoran">Teodor Elstad</a>
+        </p>
+    </footer>
+</div>
+
+<!-- KO data binding js -->
+<script src="../assets/jquery-1.10.2.js"></script>
+<script type='text/javascript' src='js/achievement-view-model.js'></script>
+<script type='text/javascript' src='js/app.js'></script>
+
+<!-- Overlay js -->
+<script type='text/javascript' src="js/achievements.js"></script>
+
 </body>
 </html>
