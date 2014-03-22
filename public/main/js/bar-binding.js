@@ -39,7 +39,15 @@ ko.bindingHandlers.barChart = {
         .text('0')
         .style("font-size","45px")
         .attr("fill", gray)
-        .attr("x", width * 0.75)
+        .attr("x", width * 0.65-30)
+        .attr("y", height/2)
+
+        svg.append("text")
+        .attr("class" , "barValueUnit")
+        .text('kWh')
+        .style("font-size","30px")
+        .attr("fill", gray)
+        .attr("x", width * 0.8)
         .attr("y", height/2);
 
         svg.append("text")
@@ -87,7 +95,7 @@ ko.bindingHandlers.barChart = {
         .transition()
         .duration(750)
         .attr("fill", c(data).darker())
-        .attr("x", width * 0.75)
+        .attr("x", width * 0.65-30)
         .attr("y", height/2)
         .tween("text", function() {
             var i = d3.interpolate(this.textContent, d),
@@ -103,5 +111,10 @@ ko.bindingHandlers.barChart = {
         .attr("fill", c(data).darker())
         .attr("x", width*0.80)
         .attr("y", height/2+35);
+
+        d3.select(element).select("text.barValueUnit")
+        .attr("fill", c(data).darker())
+        .attr("x", width * 0.8)
+        .attr("y", height/2);
     }
 };
