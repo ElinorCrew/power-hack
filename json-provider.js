@@ -79,11 +79,12 @@ var JsonProvider = function () {
     self.highscore = function () {
         return {
             "friends": [
-                {"name": "Simen", "score": 512, "imageurl" : "../style/images/simen.jpg"},
-                {"name": "George", "score": 1024,"imageurl" : "../style/images/george.jpg"},
-                {"name": "Steffen", "score": 712,"imageurl" : "../style/images/steffen.jpg"},
-                {"name": "Kirø", "score": 812, "imageurl" : "../style/images/kiro.jpg"},
-                {"name": "Teodor", "score": 732, "imageurl" : "../style/images/teo.jpg"}
+                {"name": "Simen", "score": 512, "imageurl" : "../style/images/simen.jpg","currentuser":false},
+                {"name": "George", "score": 1024,"imageurl" : "../style/images/george.jpg","currentuser":false},
+                {"name": "Steffen", "score": 712,"imageurl" : "../style/images/steffen.jpg","currentuser":false},
+                {"name": "Kirø", "score": 812, "imageurl" : "../style/images/kiro.jpg","currentuser":false},
+                {"name": "Teodor", "score": 732, "imageurl" : "../style/images/teo.jpg","currentuser":false},
+                {"name": "Inga Marte", "score": 132, "imageurl": "../style/images/inga_marte.jpg", "currentuser":true}
             ]
         };
     };
