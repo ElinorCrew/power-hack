@@ -7,7 +7,7 @@ var JsonProvider = function () {
     'use strict';
     var self = this;
 
-    self.achievementData = function(){
+    self.achievementData = function() {
         return { achievements: [
             {
                 id: "earth_hour",
@@ -21,8 +21,57 @@ var JsonProvider = function () {
                 name: "Lyset av om natta",
                 completed: true,
                 img: "lightbulb2",
-                description: "en natt uten forbruk. (typisk sommer achievement)"
-            }
+                description: "En natt uten strømforbruk."
+            },
+            {
+                id: "resolution",
+                name: "Nyttårsforsett",
+                completed: true,
+                img: "energysavings",
+                description: "Lavere strømforbruk i år i forhold til i fjor."
+            },
+            {
+                id: "stjohns",
+                name: "Kongen av Sankthans",
+                completed: false,
+                img: "campfire",
+                description: "Ingen strømforbruk på Sankthansaften."
+            },
+            {
+                id: "candle",
+                name: "Levende lys",
+                completed: true,
+                img: "candle",
+                description: "Forbruk mindre enn 6 kW mellom kl. 17 og 20."
+            },
+            {
+                id: "under_consumption",
+                name: "Underforbruk",
+                completed: true,
+                img: "graph",
+                description: "Strømforbruk som endelig er under gjennomsnittet."
+            },
+                        {
+                id: "savingsflare",
+                name: "Sparebluss",
+                completed: true,
+                img: "orbit",
+                description: "Forbruk under gjennomsnittet i et år."
+            },
+                        {
+                id: "supersavings",
+                name: "Superspar",
+                completed: true,
+                img: "calendar2",
+                description: "Forbruk under gjennomsnittet i en måned."
+            },
+                        {
+                id: "winter",
+                name: "Vinterkulda",
+                completed: true,
+                img: "defrost",
+                description: "Forbruk under gjennomsnittet for vintermånedene november-februar."
+            },
         ]
         };
     }
@@ -30,11 +79,11 @@ var JsonProvider = function () {
     self.highscore = function () {
         return {
             "friends": [
-                {"name": "Simen", "score": 512},
-                {"name": "George", "score": 1024},
-                {"name": "Steffen", "score": 712},
-                {"name": "Kirø", "score": 812},
-                {"name": "Teodor", "score": 732}
+                {"name": "Simen", "score": 512, "imageurl" : "../style/images/simen.jpg"},
+                {"name": "George", "score": 1024,"imageurl" : "../style/images/george.jpg"},
+                {"name": "Steffen", "score": 712,"imageurl" : "../style/images/steffen.jpg"},
+                {"name": "Kirø", "score": 812, "imageurl" : "../style/images/kiro.jpg"},
+                {"name": "Teodor", "score": 732, "imageurl" : "../style/images/teo.jpg"}
             ]
         };
     };
