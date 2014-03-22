@@ -9,7 +9,7 @@ ko.bindingHandlers.barChart = {
 
         var  width = parseInt(d3.select(element).style("width"), 10),
         height = parseInt(d3.select(element).style("height"), 10),
-        title = ko.unwrap(valueAccessor()[1]),
+        title = ko.unwrap(valueAccessor()[2]),
 
         svg = d3.select(element)
         .append("svg")
@@ -56,14 +56,15 @@ ko.bindingHandlers.barChart = {
         var width = parseInt(d3.select(element).style("width"), 10),
         height = parseInt(d3.select(element).style("height"), 10),
         data = ko.unwrap(valueAccessor()[0]),
-        d= Math.round(Math.abs(1-data)*10)/10,
+        maxValue = ko.unwrap(valueAccessor()[1]),
+        d= Math.round(data*10)/10,
 
         w  = function (value) {
-            return parseInt(d * width, 10);
+            return parseInt(Math.round(Math.abs(data)*10)/10 * width/maxValue, 10);
         },
 
         c  = function (value) {
-            if (value <= 1) {
+            if (value < 0) {
                 return red;
             };
             return green;

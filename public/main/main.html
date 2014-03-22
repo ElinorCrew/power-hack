@@ -102,20 +102,20 @@
       <h4> Du har fått en ny utmerkelse! </h4>
       <img class="apanelicon" src="../achievements/style/images/energysavings.png"></img>
       <p>Nyttårsforsett</p>
-      </div>
+    </div>
 
-  <div class="row">
-    <div class="col-lg-12">
-            <div class="headerbanner">
-            <p class="introhead">
-                Velkommen Kraftkamp.no
-                <br>stedet hvor du kan konkurrere med deg selv om å spare strøm.
-            </p>
-            <p class="introtext">
-                Her kan du se statistikk basert på ditt strømforbruk og opparbeide deg poeng etter hvor
-                flink du er til å spare strøm.
-                <br />Kanskje får du en bonus også?
-            </p>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="headerbanner">
+          <p class="introhead">
+            Velkommen Kraftkamp.no
+            <br>stedet hvor du kan konkurrere med deg selv om å spare strøm.
+          </p>
+          <p class="introtext">
+            Her kan du se statistikk basert på ditt strømforbruk og opparbeide deg poeng etter hvor
+            flink du er til å spare strøm.
+            <br />Kanskje får du en bonus også?
+          </p>
 
 <!--   <div class="row">
     <div class="col-lg-12">
@@ -124,106 +124,80 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 Velkommen til din strømsentral på nettet. Her kan du se statistikk basert på ditt strømforbruk og opparbeide deg poeng etter hvor flink du er til å spare strøm. Kanskje får du en bonus også?
             </div>
-        </div> -->
-    </div>
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-3">
-      <div class="panel panel-warning ">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-xs-6">
-              <i class="fa fa-check fa-5x"></i>
-            </div>
-            <div class="col-xs-6 text-right">
-              <p class="announcement-heading">3412</p>
-              <p class="announcement-text">Total poengsum</p>
-            </div>
-          </div>
+          </div> -->
         </div>
-        <a href="#">
-          <div class="panel-footer announcement-bottom">
-            <div class="row">
-              <div class="col-xs-6">
-                Se poengberegning
-              </div>
-              <div class="col-xs-6 text-right">
-                <i class="fa fa-arrow-circle-right"></i>
-              </div>
-            </div>
-          </div>
-        </a>
       </div>
     </div>
-    <div class="col-lg-3">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-xs-6">
-              <i class="fa fa-tasks fa-5x"></i>
-            </div>
-            <div class="col-xs-6 text-right">
-              <p class="announcement-heading">4/24</p>
-              <p class="announcement-text">Utmerkelser oppnådd</p>
-            </div>
-          </div>
-        </div>
-        <a href="#">
-          <div class="panel-footer announcement-bottom">
+
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="panel panel-warning ">
+          <div class="panel-heading">
             <div class="row">
               <div class="col-xs-6">
-                Se utmerkelser
+                <i class="fa fa-check fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <i class="fa fa-arrow-circle-right"></i>
+                <p class="announcement-heading">3412</p>
+                <p class="announcement-text">Total poengsum</p>
               </div>
             </div>
           </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-xs-6">
-              <i class="fa fa-comments fa-5x"></i>
+          <a href="#">
+            <div class="panel-footer announcement-bottom">
+              <div class="row">
+                <div class="col-xs-6">
+                  Se poengberegning
+                </div>
+                <div class="col-xs-6 text-right">
+                  <i class="fa fa-arrow-circle-right"></i>
+                </div>
+              </div>
             </div>
-            <div class="col-xs-6 text-right">
-              <p class="announcement-heading">2103</p>
-              <p class="announcement-text">kroner spart</p>
-            </div>
-          </div>
+          </a>
         </div>
-        <a href="#">
-          <div class="panel-footer announcement-bottom">
+      </div>
+      <div class="col-lg-3">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
             <div class="row">
               <div class="col-xs-6">
-                Se besparelser
+                <i class="fa fa-tasks fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <i class="fa fa-arrow-circle-right"></i>
+                <p class="announcement-heading">4/24</p>
+                <p class="announcement-text">Utmerkelser oppnådd</p>
               </div>
             </div>
           </div>
-        </a>
+          <a href="#">
+            <div class="panel-footer announcement-bottom">
+              <div class="row">
+                <div class="col-xs-6">
+                  Se utmerkelser
+                </div>
+                <div class="col-xs-6 text-right">
+                  <i class="fa fa-arrow-circle-right"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="miniChart" data-bind="barChart: [myCurrentAverageData, 'Nice Title!']"></div>
-    </div>
-  </div><!-- /.row -->
+      <div class="col-lg-3">
+        <div class="miniChart" data-bind="barChart: [myCurrentPowerData, maxJsonData, 'Nice Title!']"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="miniChart" data-bind="barChart: [myCurrentGroupData, maxJsonData, 'Nice Title!']"></div>
+      </div>
+    </div><!-- /.row -->
 
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="bigChart" data-bind='lineChart: jsonData'></div>
-    </div>
-  </div><!-- /.row -->
-
-</div><!-- /#page-wrapper -->
-
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bigChart" data-bind='lineChart: jsonData'></div>
+      </div>
+      </div><!-- /.row -->
+  </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
 
 <script src="../assets/jquery-1.10.2.js"></script>
@@ -249,12 +223,12 @@
     );
   }
 
-    $(document).ready(function(){
+  $(document).ready(function(){
     setTimeout(function(){
       animatepanel()}, 6000);
     setTimeout(function(){
       animatepanelback()}, 12000);
-});
+  });
 
 
 </script>

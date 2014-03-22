@@ -10,15 +10,26 @@ var PH = this.PH || {};
 
         self.jsonData = ko.observableArray(data.thisWeek);
 
-        self.myCurrentAverageData = ko.observable(1);
+        self.maxJsonData = ko.computed(function() {
+            return d3.max(self.jsonData(), function (d) {return d.val});
+        }, self);
 
-        setInterval(function () {
-            self.myCurrentAverageData(Math.random() * 2);
-        }, 3333);
-        self.myCurrentPowerData = ko.observable(1);
+        self.scaleBarData = function (value) {
+            return value * 2 / self.maxJsonData();
+        }
 
-        setInterval(function () {
-            self.myCurrentPowerData(Math.random() * 2);
-        }, 3333);
-    };
+        self.averageGroupData = ko.computed(function() {
+            return 4
+        }, self);
+        self.myCurrentGroupData = ko.computed(function() {
+            return self.averageGroupData()-self.jsonData()[self.jsonData().length-1].val;
+        }, self);
+        self.myAverageCurrentPowerData = ko.observable(2);
+
+        self.myCurrentPowerData = ko.computed(function() {
+            console.log(self.jsonData()[self.jsonData().length-2].val);
+            return self.myAverageCurrentPowerData()-self.jsonData()[self.jsonData().length-2].val;
+        }, self);
+    }
 }(PH));
+
