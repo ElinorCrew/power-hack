@@ -7,8 +7,8 @@ ko.bindingHandlers.barChart = {
     init: function(element, valueAccessor) {
         "use strict";
 
-        var  width = parseInt(d3.select(element).style("width"), 10),
-        height = parseInt(d3.select(element).style("height"), 10),
+        var  width = parseInt(d3.select(element).style("width"), 10)+1,
+        height = parseInt(d3.select(element).style("height"), 10)+1,
         title = ko.unwrap(valueAccessor()[2]),
 
         svg = d3.select(element)
@@ -17,20 +17,22 @@ ko.bindingHandlers.barChart = {
         .attr("height", height)
 
         svg.append("rect")
-        .style("stroke-width", 1)
-        .style("stroke", gray.darker())
+        // .style("stroke-width", 1)
+        // .style("stroke", gray.darker())
         .style("fill", gray)
         .attr("width", width)
-        .attr("ry", 10)
+        .attr("ry", 2)
+        .attr("rx", 2)
         .attr("height", height)
         .attr("class", "barBox");
 
-
         svg.append("rect")
         .attr("class" , "barRect")
-        .attr("ry", 10)
+        .attr("ry", 2)
+        .attr("rx", 2)
         .attr("width", 0)
         .attr("height", height);
+
 
         svg.append("text")
         .attr("class" , "barValue")
@@ -38,23 +40,23 @@ ko.bindingHandlers.barChart = {
         .style("font-size","45px")
         .attr("fill", gray)
         .attr("x", width * 0.75)
-        .attr("y", height/2.5);
+        .attr("y", height/2);
 
         svg.append("text")
         .attr("class" , "barTitle")
         .text(title)
-        .style("font-size","35px")
+        .style("font-size","14")
         .attr("fill", gray)
         .attr("text-anchor", "middle")
-        .attr("x", width*0.4)
-        .attr("y", height*6/7);
+        .attr("x", width*0.7)
+        .attr("y", height/2-35);
 
     },
     update: function(element, valueAccessor) {
         "use strict";
 
         var width = parseInt(d3.select(element).style("width"), 10),
-        height = parseInt(d3.select(element).style("height"), 10),
+        height = parseInt(d3.select(element).style("height"), 10)+1,
         data = ko.unwrap(valueAccessor()[0]),
         maxValue = ko.unwrap(valueAccessor()[1]),
         d= Math.round(data*10)/10,
@@ -86,7 +88,7 @@ ko.bindingHandlers.barChart = {
         .duration(750)
         .attr("fill", c(data).darker())
         .attr("x", width * 0.75)
-        .attr("y", height/2.5)
+        .attr("y", height/2)
         .tween("text", function() {
             var i = d3.interpolate(this.textContent, d),
             prec = (d + "").split("."),
@@ -99,7 +101,7 @@ ko.bindingHandlers.barChart = {
 
         d3.select(element).select("text.barTitle")
         .attr("fill", c(data).darker())
-        .attr("x", width*0.4)
-        .attr("y", height*6/7);
+        .attr("x", width*0.80)
+        .attr("y", height/2+35);
     }
 };
