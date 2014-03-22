@@ -8,6 +8,9 @@ var express = require('express'),
     JsonProvider = require('./json-provider').JsonProvider,
     provider = new JsonProvider(),
 
+    // ApiDataProvider = require('./api-data-provider').ApiDataProvider,
+    // apiProvider = new ApiDataProvider(),
+
     port = process.env.PORT || 1704,
     enviroment = process.env.NODE_ENV || 'local',
 
@@ -21,7 +24,7 @@ app.configure(function() {
     app.use(express.urlencoded());
     app.use(express.cookieParser());
 
-    app.use(express.static(__dirname + '/node_modules/underscore'));
+    app.use(express.static(__dirname + '/node_modules'));
     app.use(express.static(__dirname + '/public'));
 
     app.use(app.router);
@@ -48,6 +51,9 @@ app.get('/demo', function (req, res) {
     res.sendfile(__dirname + '/public/demo.html');
 });
 
+app.get('/api', function (req, res) {
+    res.sendfile(__dirname + '/public/api.html');
+});
 
 // Serves test JSON of meter readings
 app.get('/json', function (req, res) {
@@ -63,6 +69,8 @@ app.get('/json/february', function (req, res) {
 app.get('/json/highscore', function (req, res) {
     res.json(provider.highscore());
 });
+
+
 
 // Start server on given port
 app.listen(port);
