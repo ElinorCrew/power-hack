@@ -36,7 +36,6 @@
                 <img class="avatarmain img-circle" src="../style/images/inga_marte.jpg">
                 <h3 class="avatartext">Inga Marte</h3>
                 <p class="avatarnumber">Kundenr.: 23159124</p>
-
                 <li class="sidebarlinks"><span class="hdivider"></span><a href="/main"><img class="iconsize" src="../style/images/house.png"/><i class="fa fa-dashboard"></i> Min side </a></li>
                 <li class="active sidebarlinks"><span class="hdivider"></span><a href="/highscore"><img class="iconsize" src="../style/images/friends.png"/><i class=""></i> Mine Venner </a></li>
                 <li class="sidebarlinks"><span class="hdivider"></span><a href="/achievements"><img class="iconsize" src="../style/images/ribbon.png"/><i class=""></i> Utmerkelser </a></li>
@@ -136,35 +135,36 @@
             </div>
         </div>
     </div><!-- /#wrapper -->
+</div>
 
-    <script src="../assets/jquery-1.10.2.js"></script>
-    <script src="../assets/bootstrap.min.js"></script>
-    <script type='text/javascript' src='js/highscore-binding.js'></script>
-    <script type='text/javascript' src='js/highscore-view-model.js'></script>
-    <script type='text/javascript' src='js/app.js'></script>
+<script src="../assets/jquery-1.10.2.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script type='text/javascript' src='js/highscore-binding.js'></script>
+<script type='text/javascript' src='js/highscore-view-model.js'></script>
+<script type='text/javascript' src='js/app.js'></script>
 
-    <!-- TODO: remove this before prodution  -->
-    <script>
-        var ws;
-        function socket() {
-            ws = new WebSocket("ws://127.0.0.1:8080");
-            ws.onmessage = function ( e ) {
-                var data = JSON.parse(e.data);
-                if ( data.r ) {
-                    location.reload();
-                }
-            };
-        }
-        setInterval(function () {
-            if ( ws ) {
-                if ( ws.readyState !== 1 ) {
-                    socket();
-                }
-            } else {
+<!-- TODO: remove this before prodution  -->
+<script>
+    var ws;
+    function socket() {
+        ws = new WebSocket("ws://127.0.0.1:8080");
+        ws.onmessage = function ( e ) {
+            var data = JSON.parse(e.data);
+            if ( data.r ) {
+                location.reload();
+            }
+        };
+    }
+    setInterval(function () {
+        if ( ws ) {
+            if ( ws.readyState !== 1 ) {
                 socket();
             }
-        }, 1000);
-    </script>
+        } else {
+            socket();
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
