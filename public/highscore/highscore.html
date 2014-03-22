@@ -84,10 +84,9 @@
                 <button type="button" class="btn btn-info friendbutton pull-right">Legg til en ny venn +</button>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-lg-12 containerrace">
-                <div data-bind='foreach: friends'>
+            <div class="col-lg-12">
+                <div class="containerrace" data-bind='foreach: friends'>
                     <div class="row">
                         <div class="col-md-1">
                             <img data-bind='attr:{src:imageurl}' class="img-responsive img-circle avatarrace" alt="profile_picture">
@@ -102,11 +101,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row vspace"></div>
             </div>
         </div>
-    </div><!-- /#wrapper -->
-</div>
+    </div> <!-- /#page-wrapper -->
+</div><!-- /#wrapper -->
 
 <script src="../assets/jquery-1.10.2.js"></script>
 <script src="../assets/bootstrap.min.js"></script>
@@ -136,6 +134,7 @@
         }
     }, 1000);
 </script>
+
 
 </body>
 </html>
