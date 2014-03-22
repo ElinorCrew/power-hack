@@ -10,13 +10,13 @@ var PH = this.PH || {};
 
         self.readingType = function (readingType) {
             var values = readingType.ref.split('.'),
-                attributes = [
-                    'TimeAttribute', 'DataQualifier', 'AccumlationBehaviour', 'FlowDirection',
-                    'UomCategorySubclass', 'UomCategoryIndex', 'MeasurementCategory', 'Enumeration',
-                    'Phase', 'metricMultiplier', 'UnitOfMeasure'
-                ],
-                json = {},
-                i;
+            attributes = [
+            'TimeAttribute', 'DataQualifier', 'AccumlationBehaviour', 'FlowDirection',
+            'UomCategorySubclass', 'UomCategoryIndex', 'MeasurementCategory', 'Enumeration',
+            'Phase', 'metricMultiplier', 'UnitOfMeasure'
+            ],
+            json = {},
+            i;
 
             for (i = 0; i < attributes.length; i += 1) {
                 json[attributes[i]] = parseInt(values[i], 10);
@@ -27,7 +27,7 @@ var PH = this.PH || {};
 
         self.wattHours = function (meterReading) {
             var value = meterReading.value,
-                readingType = self.readingType(meterReading.readingType);
+            readingType = self.readingType(meterReading.readingType);
 
             if (readingType.metricMultiplier === 3) {
                 return value * 1000;
@@ -52,15 +52,26 @@ var PH = this.PH || {};
             });
         }
 
-        self.myCurrentAverageData = ko.observable(1);
+        self.maxJsonData = ko.computed(function() {
+            return d3.max(self.jsonData(), function (d) {return d.val});
+        }, self);
 
-        setInterval(function () {
-            self.myCurrentAverageData(Math.random() * 2);
-        }, 3333);
-        self.myCurrentPowerData = ko.observable(1);
+        self.scaleBarData = function (value) {
+            return value * 2 / self.maxJsonData();
+        }
 
-        setInterval(function () {
-            self.myCurrentPowerData(Math.random() * 2);
-        }, 3333);
-    };
+        self.averageGroupData = ko.computed(function() {
+            return 4
+        }, self);
+        self.myCurrentGroupData = ko.computed(function() {
+            return self.averageGroupData()-self.jsonData()[self.jsonData().length-1].val;
+        }, self);
+        self.myAverageCurrentPowerData = ko.observable(2);
+
+        self.myCurrentPowerData = ko.computed(function() {
+            console.log(self.jsonData()[self.jsonData().length-2].val);
+            return self.myAverageCurrentPowerData()-self.jsonData()[self.jsonData().length-2].val;
+        }, self);
+    }
 }(PH));
+

@@ -161,35 +161,11 @@
 </a>
 </div>
 </div>
-<div class="col-lg-3">
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col-xs-6">
-          <i class="fa fa-comments fa-5x"></i>
-      </div>
-      <div class="col-xs-6 text-right">
-          <p class="announcement-heading">2103</p>
-          <p class="announcement-text">kroner spart</p>
-      </div>
-  </div>
-</div>
-<a href="#">
-  <div class="panel-footer announcement-bottom">
-    <div class="row">
-      <div class="col-xs-6">
-        Se besparelser
-    </div>
-    <div class="col-xs-6 text-right">
-        <i class="fa fa-arrow-circle-right"></i>
-    </div>
-</div>
-</div>
-</a>
-</div>
-</div>
   <div class="col-lg-3">
-  <div class="miniChart" data-bind="barChart: [myCurrentAverageData, 'Nice Title!']"></div>
+    <div class="miniChart" data-bind="barChart: [myCurrentPowerData, maxJsonData, 'Nice Title!']"></div>
+  </div>
+  <div class="col-lg-3">
+    <div class="miniChart" data-bind="barChart: [myCurrentGroupData, maxJsonData, 'Nice Title!']"></div>
   </div>
 </div><!-- /.row -->
 
