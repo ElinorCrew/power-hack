@@ -63,7 +63,8 @@ div#overlay {
 }
 
 .simple_overlay_img{
-    max-height:200px;
+    max-height:195px;
+    margin-left: 5px;
 }
 
 /* styling for elements inside overlay */
