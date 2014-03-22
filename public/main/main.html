@@ -88,10 +88,40 @@
 
     <div class="row">
       <div class="col-lg-3">
-        <div class="miniChart" data-bind="barChart: [myCurrentPowerData, maxJsonData, 'Din differanse']"></div>
+       <div class="panel bar">
+        <div class="miniChart" data-bind="barChart: [myCurrentPowerData, maxJsonData, 'Gruppedifferanse']"></div>
+
+            <a href="#">
+            <div class="panel-footer announcement-bottom">
+              <div class="row">
+                <div class="col-xs-6">
+                  Se poengberegning
+                </div>
+                <div class="col-xs-6 text-right">
+                  <i class="fa fa-arrow-circle-right"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="col-lg-3">
+        <div class="panel bar">
         <div class="miniChart" data-bind="barChart: [myCurrentGroupData, maxJsonData, 'Gruppedifferanse']"></div>
+
+            <a href="#">
+            <div class="panel-footer announcement-bottom">
+              <div class="row">
+                <div class="col-xs-6">
+                  Se poengberegning
+                </div>
+                <div class="col-xs-6 text-right">
+                  <i class="fa fa-arrow-circle-right"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="col-lg-3">
         <div class="panel panel-warning ">
@@ -151,7 +181,16 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <div class="bigChart" data-bind='lineChart: [jsonData, averageGroupData, myAverageCurrentPowerData]'></div>
+        <div class="graph-header">
+          <span class="big-text">Ditt ukentlig strømforbruk</span>
+          <span class="color-text pull-right">Forrige ukes gjennomsnittsforbruk</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bigChart" data-bind='lineChart: [jsonData, myAverageCurrentPowerData]'></div>
       </div>
     </div><!-- /.row -->
   </div><!-- /#page-wrapper -->
