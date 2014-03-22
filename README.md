@@ -102,8 +102,8 @@ For the sake of simplicity, mocha is currently only set up to run server-side te
 Authors
 -------
 
-#### Teodor A. Elstad (http://twitter.com/_teodoran)
-#### Simen H. Granlund (http://twitter.com/simengranlund)
-#### Magnus Kirø (http://twitter.com/magnuskiro)
-#### George Lee (http://twitter.com/georgekw89)
-#### Steffen P. Henriksen (http://twitter.com/spohner)
+Teodor A. Elstad (http://twitter.com/_teodoran)
+Simen H. Granlund (http://twitter.com/simengranlund)
+Magnus Kirø (http://twitter.com/magnuskiro)
+George Lee (http://twitter.com/georgekw89)
+Steffen P. Henriksen (http://twitter.com/spohner)
