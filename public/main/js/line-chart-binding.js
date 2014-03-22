@@ -61,7 +61,9 @@ ko.bindingHandlers.lineChart = {
 
             animationDuration = 750,
 
-            data = ko.unwrap(valueAccessor()),
+            data = ko.unwrap(valueAccessor()[0]),
+            groupAwg = ko.unwrap(valueAccessor()[1]),
+            myAwg = ko.unwrap(valueAccessor()[2]),
 
             x = d3.time.scale()
                 .range([0, width]),
@@ -81,9 +83,6 @@ ko.bindingHandlers.lineChart = {
                 .x(function(d) { return x(d.date); })
                 .y0(height)
                 .y1(function(d) { return y(d.val); }),
-
-            previousAwerage = 2,
-            classAwerage = 3,
 
             flatArea = d3.svg.area()
                 .x(function(d) { return x(d.date); })
@@ -119,13 +118,13 @@ ko.bindingHandlers.lineChart = {
         svg.select("line.awgOldData")
             .transition()
             .duration(animationDuration)
-            .attr("y1", y(previousAwerage))
-            .attr("y2", y(previousAwerage));
+            .attr("y1", y(myAwg))
+            .attr("y2", y(myAwg));
 
         svg.select("line.awgClassData")
             .transition()
             .duration(animationDuration)
-            .attr("y1", y(classAwerage))
-            .attr("y2", y(classAwerage));
+            .attr("y1", y(groupAwg))
+            .attr("y2", y(groupAwg));
     }
 };
