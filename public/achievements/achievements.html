@@ -127,7 +127,6 @@
             Dvalemodus: Lavest strømforbruk om natta blant vennne dine.
             5:2-dietten: 5 dager i uken der strømforbruket ditt er lavere enn hos vennene dine.
         -->
-
         <div class="row">
 
             <div data-bind="foreach: jsonData">
@@ -135,18 +134,17 @@
                 <div class="col-sm-6 col-md-2">
                     <div data-bind="attr: { class: completed == true ? 'thumbnail tile tile-green-sea' : 'locked thumbnail tile' }">
                         <!-- CSS be to much hacked. -->
-                        <a href="#">
+                        <img data-bind="attr: {src: img}">
+                        <a href="#" class="achievement-overlay" >
                             <p data-bind="text: name, attr { rel: rel, class: completed == true ? 'achievement-name' : 'achievement-name locked' }"
                                onclick="toggleVisibility(this);"></p>
-                            <img data-bind="attr: {src: img}">
                         </a>
                     </div>
                 </div>
                 <!-- Overlay with description -->
                 <div class="simple_overlay" data-bind="attr: { id: id, rel: rel }"
                      onclick="toggleVisibility(this);">
-                    <!-- TODO -->
-                    <img src="style/images/close.png" class="simple_overlay close">
+                    <a class="overlayClose"></a>
 
                     <img data-bind="attr: {src: img}" class="simple_overlay_img">
                     <div class="details">
@@ -173,7 +171,7 @@
     <script>
         var ws;
         function socket() {
-            ws = new WebSocket("ws://127.0.0.1:8080");
+            ws = new WebSocket("ws://127.0.0.1:1704");
             ws.onmessage = function ( e ) {
                 var data = JSON.parse(e.data);
                 if ( data.r ) {
