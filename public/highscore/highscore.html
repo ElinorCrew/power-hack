@@ -80,7 +80,7 @@
           <button type="button" class="btn btn-info friendbutton pull-right">Legg til en ny venn +</button>
         </div>
       </div>
-
+<!-- 
       <div class="row">
         <div class="col-lg-12 containerrace">
           <div data-bind='foreach: friends'>
@@ -98,39 +98,58 @@
               </div>
             </div>
           </div>
-          <div class="row vspace"></div>
+        </div>
+      </div> -->
+      <div class="row">
+      <div class="col-lg-12">
+          <div class="containerrace" data-bind='foreach: friends'>
+            <div class="row">
+              <div class="col-md-1">
+                <img data-bind='attr:{src:imageurl}' class="img-responsive img-circle avatarrace" alt="profile_picture">
+              </div>
+              <div class="col-md-11">
+                <div class="row">
+                  <div class="" data-bind='text: name'></div>
+                </div>
+                <div class="row">
+                  <div class="miniChart" data-bind='highscoreBar: [score, $root.best, currentuser]'></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-  </div><!-- /#wrapper -->
 
-  <script src="../assets/jquery-1.10.2.js"></script>
-  <script src="../assets/bootstrap.min.js"></script>
-  <script type='text/javascript' src='js/highscore-binding.js'></script>
-  <script type='text/javascript' src='js/highscore-view-model.js'></script>
-  <script type='text/javascript' src='js/app.js'></script>
+    </div><!-- /#wrapper -->
 
-  <!-- TODO: remove this before prodution  -->
-  <script>
-    var ws;
-    function socket() {
-      ws = new WebSocket("ws://127.0.0.1:8080");
-      ws.onmessage = function ( e ) {
-        var data = JSON.parse(e.data);
-        if ( data.r ) {
-          location.reload();
-        }
-      };
-    }
-    setInterval(function () {
-      if ( ws ) {
-        if ( ws.readyState !== 1 ) {
+    <script src="../assets/jquery-1.10.2.js"></script>
+    <script src="../assets/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/highscore-binding.js'></script>
+    <script type='text/javascript' src='js/highscore-view-model.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+
+    <!-- TODO: remove this before prodution  -->
+    <script>
+      var ws;
+      function socket() {
+        ws = new WebSocket("ws://127.0.0.1:8080");
+        ws.onmessage = function ( e ) {
+          var data = JSON.parse(e.data);
+          if ( data.r ) {
+            location.reload();
+          }
+        };
+      }
+      setInterval(function () {
+        if ( ws ) {
+          if ( ws.readyState !== 1 ) {
+            socket();
+          }
+        } else {
           socket();
         }
-      } else {
-        socket();
-      }
-    }, 1000);
-  </script>
+      }, 1000);
+    </script>
 
-</body>
-</html>
+  </body>
+  </html>
