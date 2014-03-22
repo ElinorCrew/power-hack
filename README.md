@@ -4,9 +4,9 @@ ElinorCrew@PowerHack2014
 A gamification of electricity meter readings for the energy sector.
 Code provided by ElinorCrew for #PowerHack2014. Visit the live demo at [kraftkamp.no](http://kraftkamp.no). 
 
-Currently this project contains [express.js](http://expressjs.com/3x/api.html), [underscore.js](http://underscorejs.org/) and [logfmt](https://github.com/csquared/node-logfmt). On the client-side, [knockout.js](http://knockoutjs.com/documentation/introduction.html), [underscore.js](http://underscorejs.org/) and [d3.js](https://github.com/mbostock/d3/wikigit) is pulled directly from CDN. Bootstrap css is added to /public/style.
+This repository contains [express.js](http://expressjs.com/3x/api.html), [underscore.js](http://underscorejs.org/) and [logfmt](https://github.com/csquared/node-logfmt). On the client-side, [knockout.js](http://knockoutjs.com/documentation/introduction.html), [underscore.js](http://underscorejs.org/) and [d3.js](https://github.com/mbostock/d3/wikigit) are pulled directly from CDN. Bootstrap css is added to /public/style.
 
-The initial demo page is [d3-knockout-demo](https://github.com/teodoran/d3-knockout-demo), and shows how d3.js and knockout can be used together to create interesting and reusable graphs.
+d3.js and knockout are used together to create interesting and reusable graphs to present electricity consumption data.
 
 Some links from Demo Steinkjer:
 * [API documentation](https://api.demosteinkjer.no/docs/)
@@ -30,7 +30,7 @@ Launch the site at localhost with:
 ```
 npm start
 ```
-Visit [localhost:1704](http://localhost:1704/) to see the main page and [localhost:1704/json](http://localhost:1704/json) to get the example json.
+Visit [localhost:1704](http://localhost:1704/) to see the main page and [localhost:1704/json](http://localhost:1704/json) to get the JSON example.
 
 ### Installation guides
 
@@ -95,7 +95,7 @@ git push heroku master
 Testing
 -------
 
-Since time is in short supply, we'll probably roll without much tests. When needed [mocha](http://visionmedia.github.io/mocha/) specs are written and placed in the /spec folder. To install mocha and the [should.js](https://github.com/visionmedia/should.js) assertion library, install the development dependencies with npm. Run all tests with ```npm test```.
+Since time is in short supply, the page is rolled without much tests. When needed [mocha](http://visionmedia.github.io/mocha/) specs are written and placed in the /spec folder. To install mocha and the [should.js](https://github.com/visionmedia/should.js) assertion library, install the development dependencies with npm. Run all tests with ```npm test```.
 
 For the sake of simplicity, mocha is currently only set up to run server-side tests.
 
