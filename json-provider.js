@@ -17,6 +17,7 @@ var JsonProvider = function () {
         thisAwg = null,
         lastAwg = null,
         groupAwg = null,
+        firstQuarter = null,
 
         convertValues = function (data) {
             var readings = _.map(data.meterReadings[0].meterReading.readings, function (meterReading) {
@@ -37,6 +38,10 @@ var JsonProvider = function () {
 
             return temp;
         };
+
+    apiProvider.getMeterReadings(meterKey, '2014-01-01', '2014-03-22', 'Week', function (json) {
+        firstQuarter = _.reduce(convertValues(json), function(memo, reading) { return memo + reading.val; }, 0);
+    });
 
     apiProvider.getMeterReadings(meterKey, '2014-03-15', '2014-03-22', 'Hour', function (json) {
         thisWeek = convertValues(json);
@@ -61,7 +66,8 @@ var JsonProvider = function () {
             lastWeek: lastWeek,
             thisWeekAwg: thisAwg,
             lastWeekAwg: lastAwg,
-            thisGroupAwg: groupAwg
+            thisGroupAwg: groupAwg,
+            firstQuarter: firstQuarter
         };
     };
 
@@ -83,6 +89,10 @@ var JsonProvider = function () {
 
     self.thisGroupAwg = function () {
         return groupAwg;
+    };
+
+    self.firstQuarter = function () {
+        return firstQuarter;
     };
 
     self.achievementData = function() {
