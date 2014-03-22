@@ -113,7 +113,28 @@ var JsonProvider = function () {
                 completed: true,
                 img: "meter",
                 description: "Oppnå 5 dager i uken der strømforbruket ditt er lavere enn hos vennne dine."
-            },                        
+            },
+            {
+                id: "16",
+                name: "Tabelleder",
+                completed: true,
+                img: "ribbon3",
+                description: "Lavest strømforbruk blant vennene dine i et år."
+            },
+            {
+                id: "17",
+                name: "Nedskjæring",
+                completed: true,
+                img: "greenenergy2",
+                description: "Redusert strømforbruket med minst 20 % fra i fjor."
+            },
+            {
+                id: "18",
+                name: "Småtteri",
+                completed: true,
+                img: "lightbulb2",
+                description: "Redusert strømforbruket med minst 5 % fra i fjor."
+            }
         ]
         };
     }
