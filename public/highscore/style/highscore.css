@@ -2,12 +2,22 @@
     height: 40px;
 }
 
+.containerrace{
+	background-color: rgb(241, 241, 241);
+	padding: 20px;
+}
+
+.avatarrace{
+	width: 50px;
+	margin-top: 15px;
+}
+
 .vspace {
     height: 15px;
 }
 
 .background {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
 }
 
 .score {

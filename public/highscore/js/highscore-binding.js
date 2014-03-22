@@ -30,7 +30,7 @@ ko.bindingHandlers.highscoreBar = {
 
         var svg = d3.select(element),
 
-            padding = parseInt(svg.style("padding-right"), 10),
+            padding = parseInt(svg.style("padding-right"), 30),
             width = parseInt(svg.style("width"), 10) - 2 * padding,
 
 

@@ -30,11 +30,11 @@ var JsonProvider = function () {
     self.highscore = function () {
         return {
             "friends": [
-                {"name": "Simen", "score": 512},
-                {"name": "George", "score": 1024},
-                {"name": "Steffen", "score": 712},
-                {"name": "Kirø", "score": 812},
-                {"name": "Teodor", "score": 732}
+                {"name": "Simen", "score": 512, "imageurl" : "../style/images/simen.jpg"},
+                {"name": "George", "score": 1024,"imageurl" : "../style/images/george.jpg"},
+                {"name": "Steffen", "score": 712,"imageurl" : "../style/images/steffen.jpg"},
+                {"name": "Kirø", "score": 812, "imageurl" : "../style/images/kiro.jpg"},
+                {"name": "Teodor", "score": 732, "imageurl" : "../style/images/teo.jpg"}
             ]
         };
     };
