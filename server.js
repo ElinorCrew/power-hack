@@ -17,16 +17,14 @@ var express = require('express'),
 /////////////////////////////////
 // General express server config
 
-app.configure(function() {
-    app.use(express.json());
-    app.use(express.urlencoded());
-    app.use(express.cookieParser());
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.cookieParser());
 
-    app.use(express.static(__dirname + '/node_modules'));
-    app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/node_modules'));
+app.use(express.static(__dirname + '/public'));
 
-    app.use(app.router);
-});
+app.use(app.router);
 
 // Serves initial html page
 app.get('/', function (req, res) {
